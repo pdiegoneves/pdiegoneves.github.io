@@ -3,4 +3,8 @@
   margin: 0;
   box-sizing: border-box;
   border: 0;
+
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  list-style: none;
 }
