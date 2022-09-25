@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="container">
-      <header>
+      <header id="topo-da-pagina">
         <div class="perfil">
           <picture class="foto-perfil">
             <img
@@ -29,8 +29,8 @@
         <nav class="menu-topo">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#sobre">Sobre</a> </li>
-            <li><a href="#projetos">Projetos</a> </li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
             <li><a href="#contatos">Contatos</a></li>
           </ul>
         </nav>
@@ -39,18 +39,54 @@
         <section id="sobre">
           <h2>Sobre Mim</h2>
           <p>Tenho <span id="idade"></span> anos, casado e tenho 3 filhos.</p>
-          <p>Trabalho com tecnologia desde 2003, comecei montando como técnico de suporte em hardware e redes, em uma revenda de software contábil.</p>
-          <p>Já trabalhei com montagem de computadores e com suporte a usuários em software house.</p>
-          <p>Minhas experiências profissionais mais relevante entretranto se resumem a duas. Um onde comecei como técnico de instalação de central telefônica e em dois anos me tornei o principal técnico de redes da empresa, sendo responsável pela instalação, manutenção e suporte aos servidores e estrutura de redes de 15 clientes. A outra foi o cargo de Gerente de Tecnológia de uma transportadora que contava com 5 filiais, onde passei 9 anos e fui responsável pela concepção e execução de diversos projetos, desde redes físicas a troca de servidores e de sistema ERP.</p>
-          <p>Sempre gostei de programar e atualmente venho trabalhando em diversos projetos pessoais de Frontend, sei que designer não é meu forte🙈, mas também pretendo melhorar nisso em breve.</p>
+          <p>
+            Trabalho com tecnologia desde 2003, comecei montando como técnico de
+            suporte em hardware e redes, em uma revenda de software contábil.
+          </p>
+          <p>
+            Já trabalhei com montagem de computadores e com suporte a usuários
+            em software house.
+          </p>
+          <p>
+            Minhas experiências profissionais mais relevante entretranto se
+            resumem a duas. Um onde comecei como técnico de instalação de
+            central telefônica e em dois anos me tornei o principal técnico de
+            redes da empresa, sendo responsável pela instalação, manutenção e
+            suporte aos servidores e estrutura de redes de 15 clientes. A outra
+            foi o cargo de Gerente de Tecnológia de uma transportadora que
+            contava com 5 filiais, onde passei 9 anos e fui responsável pela
+            concepção e execução de diversos projetos, desde redes físicas a
+            troca de servidores e de sistema ERP.
+          </p>
+          <p>
+            Sempre gostei de programar e atualmente venho trabalhando em
+            diversos projetos pessoais de Frontend, sei que designer não é meu
+            forte🙈, mas também pretendo melhorar nisso em breve.
+          </p>
         </section>
         <section id="projetos">
           <h2>Projetos</h2>
-          <article class="cards">
-            <h3 class="card-title">Titulo</h3>
-            <img src="" alt="">
-            <span class="card-tecnologias"></span>
-          </article>
+          <div class="cards">
+            <article class="card" id="carrossel-css">
+              <h3 class="card-title">Carrossel CSS</h3>
+              <img
+                class="card-cover"
+                src="src/assets/images/projetos/capa-carroselcss.png"
+                alt="Capa do projeto carrosel CSS"
+              />
+              <span class="card-tecnologias">HTML | CSS</span>
+            </article>
+
+            <article class="card" id="criador-border-radius">
+              <h3 class="card-title">Criador de border radius</h3>
+              <img
+                class="card-cover"
+                src="src/assets/images/projetos/capa-criado-de-border-radius.png"
+                alt="Capa do projeto Criador de Border Radius"
+              />
+              <span class="card-tecnologias">HTML | CSS | JavaScript</span>
+            </article>
+          </div>
         </section>
       </main>
       <footer id="contatos"></footer>

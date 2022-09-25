@@ -1,0 +1,26 @@
+.card
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: relative
+    cursor: pointer
+
+@media (max-width: 425px)
+    .card
+        margin-bottom: 1em
+        width: 100%
+
+@media (min-width: 426px)
+    .card
+        width: 40vw
+        margin: 1em
+        &:hover
+            .card-tecnologias
+                opacity: 1
+
+            .card-cover
+
+                opacity: 0.8
+@media (min-width: 769px)
+    .card
+        max-width: 30vw
