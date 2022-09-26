@@ -1,17 +1,20 @@
 .menu-topo
     width: 100%
+    background-color: rgba(0,0 ,0 ,.2 )
     ul
+        height: 3em
         display: flex
         flex-direction: row
         justify-content: space-evenly
-        background-color: orange
+        align-items: center
         font-family: Raleway, sans-serif
-
         li
             display: flex
-            flex: 1
-            height: 100%
-            width: 100%
-            padding: 1em
             justify-content: center
             align-items: center
+            a
+                color: #fff
+@media (min-width: 729px)
+    .menu-topo
+        justify-content: flex-end
+        width: 50vw
