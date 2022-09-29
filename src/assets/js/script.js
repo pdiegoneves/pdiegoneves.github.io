@@ -47,7 +47,7 @@ function alterarMenu() {
   if (
     sections[0].getBoundingClientRect().top +
       sections[0].getBoundingClientRect().height <
-    0
+    1
   ) {
     menuTopo.classList.add("menuEscuro");
   } else {

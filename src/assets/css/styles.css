@@ -230,6 +230,10 @@ footer a {
     height: 3em;
   }
 }
+.margin-footer {
+  height: 3em;
+}
+
 section {
   display: flex;
   flex: 1;
