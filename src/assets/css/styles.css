@@ -34,6 +34,7 @@ img {
   top: 10vh;
   color: #fff;
   font-size: 3em;
+  z-index: 100;
 }
 .apresentacao-inicial span {
   font-family: monospace;
