@@ -83,6 +83,7 @@ p {
 
 .card-cover {
   transition: all 0.3s;
+  border-radius: 0 0 1em 1em;
 }
 
 .card-tecnologias {
@@ -109,7 +110,7 @@ p {
   color: #fff;
   background-color: orange;
   line-height: 1.5em;
-  margin-bottom: 0.2em;
+  border-radius: 1em 1em 0 0;
 }
 
 .menu-topo {
@@ -143,6 +144,8 @@ p {
   justify-content: center;
   position: relative;
   cursor: pointer;
+  border-radius: 1em;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 425px) {
@@ -191,6 +194,42 @@ p {
   justify-content: center;
 }
 
+@media (max-width: 425px) {
+  .cards {
+    padding: 0.5em;
+  }
+}
+footer {
+  background-color: #0f326a;
+  width: 100vw;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+footer a {
+  color: #fff;
+}
+
+@media (max-width: 425px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    gap: 0;
+    z-index: 999;
+  }
+  footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2f60af;
+    width: 20vw;
+    height: 3em;
+  }
+}
 section {
   display: flex;
   flex: 1;
