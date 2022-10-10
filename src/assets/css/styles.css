@@ -10,8 +10,11 @@
 
 img {
   max-width: 100%;
-  height: auto;
   vertical-align: middle;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -85,6 +88,8 @@ p {
 .card-cover {
   transition: all 0.3s;
   border-radius: 0 0 1em 1em;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-tecnologias {
@@ -157,8 +162,9 @@ p {
 }
 @media (min-width: 426px) {
   .card {
-    width: 40vw;
+    width: 29vw;
     margin: 1em;
+    margin-bottom: 1em;
   }
   .card:hover .card-tecnologias {
     opacity: 1;
