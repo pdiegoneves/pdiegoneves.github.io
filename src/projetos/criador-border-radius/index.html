@@ -1,30 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Border Radius</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="container" id="container">
-        <div class="square" id="square"></div>
-        <input type="range" min="0" max="50" value="0" step="1"  id="border-radius-top-left" onchange="mundarBorderRadius()">
-        <input type="range" min="0" max="50" value="0" step="1" id="border-radius-top-right" onchange="mundarBorderRadius()">
-        <input type="range" min="0" max="50" value="0" step="1" id="border-radius-botton-right" onchange="mundarBorderRadius()">
-        <input type="range" min="0" max="50" value="0" step="1" id="border-radius-botton-left" onchange="mundarBorderRadius()">
-        <span id="border-radius-top-left-value">0%</span>
-        <span id="border-radius-top-right-value">0%</span>
-        <span id="border-radius-botton-right-value">0%</span>
-        <span id="border-radius-botton-left-value">0%</span>
-
-        <div class="output">
-            <textarea id="css" cols="30" rows="10"></textarea>
-            <button id="copiar" onclick="copiarCodigo()">Copiar</button>
+      <div class="properties">
+        <div class="forma-container">
+          <div class="forma-group active" id="forma-square">
+            <div class="forma square"></div>
+          </div>
+          <div class="forma-group" id="forma-rectangleh">
+            <div class="forma rectangleh"></div>
+          </div>
+          <div class="forma-group" id="forma-rectanglev">
+            <div class="forma rectanglev"></div>
+          </div>
         </div>
+        <div class="unity-container">
+          <div class="unity-group">
+            <input type="radio" id="px" name="unity" value="px" onchange="mundarBorderRadius()" checked /><label
+              for="px"
+              >px</label
+            >
+          </div>
+          <div class="unity-group">
+            <input type="radio" id="em" name="unity" value="em" onchange="mundarBorderRadius()" /><label
+              for="em"
+              >em</label
+            >
+          </div>
+          <div class="unity-group">
+            <input type="radio" id="per" name="unity" value="%" onchange="mundarBorderRadius()" /><label
+              for="per"
+              >%</label
+            >
+          </div>
+        </div>
+        <div class="range-group">
+          <label for="border-radius-top-left">Top Left</label>
+          <input
+            type="range"
+            min="0"
+            max="500"
+            value="0"
+            step="1"
+            id="border-radius-top-left"
+            onchange="mundarBorderRadius()"
+          />
+        </div>
+        <div class="range-group">
+          <label for="border-radius-top-right">Top Right</label>
+          <input
+            type="range"
+            min="0"
+            max="500"
+            value="0"
+            step="1"
+            id="border-radius-top-right"
+            onchange="mundarBorderRadius()"
+          />
+        </div>
+        <div class="range-group">
+          <label for="border-radius-botton-right">Botton Right</label>
+
+          <input
+            type="range"
+            min="0"
+            max="500"
+            value="0"
+            step="1"
+            id="border-radius-botton-right"
+            onchange="mundarBorderRadius()"
+          />
+        </div>
+        <div class="range-group">
+          <label for="border-radius-botton-left">Botton Left</label>
+          <input
+            type="range"
+            min="0"
+            max="500"
+            value="0"
+            step="1"
+            id="border-radius-botton-left"
+            onchange="mundarBorderRadius()"
+          />
+        </div>
+      </div>
+      <div class="square-group">
+        <div class="square" id="drawing">
+          <span id="border-radius-top-left-value">0</span>
+          <span id="border-radius-top-right-value">0</span>
+          <span id="border-radius-botton-right-value">0</span>
+          <span id="border-radius-botton-left-value">0</span>
+        </div>
+        <div class="output">
+          <textarea id="css" cols="30" rows="10"></textarea>
+          <button id="copiar" onclick="copiarCodigo()">Copiar</button>
+        </div>
+      </div>
     </div>
-    
+
     <script src="js/index.js"></script>
-</body>
+  </body>
 </html>
