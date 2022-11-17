@@ -25,6 +25,15 @@ body {
   position: fixed;
 }
 
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 729px) {
+  .desktop-only {
+    display: inline-block;
+  }
+}
 .avatar {
   position: absolute;
   bottom: 0;
@@ -34,7 +43,6 @@ body {
 
 .apresentacao-inicial {
   position: absolute;
-  top: 10vh;
   color: #fff;
   font-size: 3em;
   z-index: 100;
@@ -218,6 +226,9 @@ footer {
 footer a {
   color: #fff;
 }
+footer a:visited {
+  color: #fff;
+}
 
 @media (max-width: 425px) {
   footer {
@@ -241,21 +252,28 @@ footer a {
   height: 3em;
 }
 
+@media (min-width: 729px) {
+  footer {
+    min-height: 50vh;
+    flex-direction: column;
+  }
+}
 section {
   display: flex;
   flex: 1;
-  min-height: 100vh;
   width: 100vw;
-  padding: 1em;
+  padding: 1vh 3vw;
   flex-direction: column;
 }
 
 #home {
   background: url("../images/home/bg-mobile.jpg") center center no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 50vh;
   position: relative;
   z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 729px) {

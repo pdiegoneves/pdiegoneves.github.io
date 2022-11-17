@@ -1,14 +1,16 @@
-$tamnho-do-footer: 3em
+$tamanho-do-footer: 3em
 footer
     background-color: $corSecundaria
     width: 100vw
-    height: $tamnho-do-footer
+    height: $tamanho-do-footer
     display: flex
     align-items: center
     justify-content: center
     gap: 1em
     a
         color: #fff
+        &:visited
+            color: #fff
 @media (max-width: 425px)
     footer
         position: fixed
@@ -23,7 +25,12 @@ footer
             align-items: center
             border: 1px solid $corPrimaria
             width: 20vw
-            height: $tamnho-do-footer
+            height: $tamanho-do-footer
 
 .margin-footer
-    height: $tamnho-do-footer
+    height: $tamanho-do-footer
+
+@media (min-width: 729px)
+    footer
+        min-height: 50vh 
+        flex-direction: column
