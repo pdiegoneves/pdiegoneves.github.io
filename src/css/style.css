@@ -148,12 +148,17 @@ header.active + main {
   0% {
     transform: translateX(-105%);
     min-height: 69px;
+    content-visibility: hidden;
   }
   50% {
     transform: translateX(0);
     min-height: 69px;
   }
+  99% {
+    min-height: 100vh;
+  }
   100% {
+    content-visibility: visible;
     min-height: 100vh;
   }
 }
@@ -161,6 +166,7 @@ header.active + main {
   0% {
     transform: translateX(-105%);
     min-height: 69px;
+    content-visibility: hidden;
     top: 69px;
   }
   50% {
@@ -168,9 +174,14 @@ header.active + main {
     min-height: 69px;
     top: 69px;
   }
+  99% {
+    min-height: 100vh;
+    top: 0;
+  }
   100% {
     min-height: 100vh;
     top: 0;
+    content-visibility: visible;
   }
 }
 @keyframes entradaProjetos {
@@ -178,15 +189,21 @@ header.active + main {
     transform: translateX(-105%);
     min-height: 69px;
     top: 138px;
+    content-visibility: hidden;
   }
   50% {
     transform: translateX(0);
     min-height: 69px;
     top: 138px;
   }
+  99% {
+    min-height: 100vh;
+    top: 0;
+  }
   100% {
     min-height: 100vh;
     top: 0;
+    content-visibility: visible;
   }
 }
 @keyframes entradaContatos {
@@ -194,15 +211,21 @@ header.active + main {
     transform: translateX(-105%);
     min-height: 69px;
     top: 207px;
+    content-visibility: hidden;
   }
   50% {
     transform: translateX(0);
     min-height: 69px;
     top: 207px;
   }
+  99% {
+    min-height: 100vh;
+    top: 0;
+  }
   100% {
     min-height: 100vh;
     top: 0;
+    content-visibility: visible;
   }
 }
 .page {

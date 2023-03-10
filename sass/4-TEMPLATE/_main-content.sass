@@ -29,52 +29,69 @@ $alturaInicial: 69px
     0%
         transform: translateX(-105%)
         min-height: $alturaInicial
+        content-visibility: hidden
     50%
         transform: translateX(0)
         min-height: $alturaInicial
-    100%
+    99%
         min-height: 100vh
+    100%
+        content-visibility: visible
+        min-height: 100vh
+
 
 @keyframes entradaCurriculo
     0%
         transform: translateX(-105%)
         min-height: $alturaInicial
+        content-visibility: hidden
         top: 69px
     50%
         transform: translateX(0)
         min-height: $alturaInicial
         top: 69px
-    
+    99%
+        min-height: 100vh
+        top: 0
     100%
         min-height: 100vh
         top: 0
+        content-visibility: visible
 
 @keyframes entradaProjetos
     0%
         transform: translateX(-105%)
         min-height: $alturaInicial
         top: 138px
+        content-visibility: hidden
     50%
         transform: translateX(0)
         min-height: $alturaInicial
         top: 138px
-    
+    99%
+        min-height: 100vh
+        top: 0
     100%
         min-height: 100vh
         top: 0
+        content-visibility: visible
 
 @keyframes entradaContatos
     0%
         transform: translateX(-105%)
         min-height: $alturaInicial
         top: 207px
+        content-visibility: hidden
     50%
         transform: translateX(0)
         min-height: $alturaInicial
         top: 207px
-    
+    99%
+        min-height: 100vh
+        top: 0
     100%
         min-height: 100vh
         top: 0
+        content-visibility: visible
     
         
