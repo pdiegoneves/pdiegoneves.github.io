@@ -73,6 +73,9 @@ input {
   margin-bottom: 5px;
 }
 
+.menu {
+  z-index: 99;
+}
 .menu .menu-item {
   width: 100%;
   display: flex;
@@ -80,6 +83,9 @@ input {
   align-items: center;
   padding: 1em;
   cursor: pointer;
+  z-index: 99;
+  background-color: #fefefe;
+  color: #252525;
 }
 .menu .menu-item:hover, .menu .menu-item.active {
   background-color: #252525;
@@ -113,12 +119,18 @@ header.active + main {
   color: #fefefe;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .main-content-page {
   animation: entrada 2s forwards ease-out 50ms;
   background-color: #252525;
   z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+.main-content-page.curriculo {
+  top: 70px;
 }
 
 @keyframes entrada {

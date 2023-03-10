@@ -3,12 +3,19 @@
     color: #fefefe
     width: 100%
     height: 100%
+    position: relative
 
 .main-content-page
     animation: entrada 2s forwards ease-out 50ms
     background-color: #252525
     z-index: 1
+    position: absolute
+    width: 100%
+    &.curriculo
+        top: 70px
 
+
+    
 $alturaInicial: 70px
 
 @keyframes entrada
@@ -18,6 +25,7 @@ $alturaInicial: 70px
     50%
         transform: translateX(0)
         min-height: $alturaInicial
+
     100%
         min-height: 100vh
 
