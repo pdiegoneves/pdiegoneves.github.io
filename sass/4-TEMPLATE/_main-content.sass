@@ -6,18 +6,25 @@
     position: relative
 
 .main-content-page
-    animation: entrada 2s forwards ease-out 50ms
     background-color: #252525
     z-index: 1
     position: absolute
     width: 100%
+    &.home
+        animation: entrada 2s forwards ease-out 50ms
     &.curriculo
+        animation: entradaCurriculo 2s forwards ease-out 50ms
         top: 70px
+    &.projetos
+        animation: entradaProjetos 2s forwards ease-out 50ms
+        top: 138px
+    &.contatos
+        animation: entradaContatos 2s forwards ease-out 50ms
+        top: 207px
 
 
-    
-$alturaInicial: 70px
 
+$alturaInicial: 69px
 @keyframes entrada
     0%
         transform: translateX(-105%)
@@ -25,9 +32,49 @@ $alturaInicial: 70px
     50%
         transform: translateX(0)
         min-height: $alturaInicial
-
     100%
         min-height: 100vh
 
+@keyframes entradaCurriculo
+    0%
+        transform: translateX(-105%)
+        min-height: $alturaInicial
+        top: 69px
+    50%
+        transform: translateX(0)
+        min-height: $alturaInicial
+        top: 69px
+    
+    100%
+        min-height: 100vh
+        top: 0
+
+@keyframes entradaProjetos
+    0%
+        transform: translateX(-105%)
+        min-height: $alturaInicial
+        top: 138px
+    50%
+        transform: translateX(0)
+        min-height: $alturaInicial
+        top: 138px
+    
+    100%
+        min-height: 100vh
+        top: 0
+
+@keyframes entradaContatos
+    0%
+        transform: translateX(-105%)
+        min-height: $alturaInicial
+        top: 207px
+    50%
+        transform: translateX(0)
+        min-height: $alturaInicial
+        top: 207px
+    
+    100%
+        min-height: 100vh
+        top: 0
     
         

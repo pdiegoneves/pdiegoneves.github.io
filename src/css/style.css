@@ -123,27 +123,86 @@ header.active + main {
 }
 
 .main-content-page {
-  animation: entrada 2s forwards ease-out 50ms;
   background-color: #252525;
   z-index: 1;
   position: absolute;
   width: 100%;
 }
+.main-content-page.home {
+  animation: entrada 2s forwards ease-out 50ms;
+}
 .main-content-page.curriculo {
+  animation: entradaCurriculo 2s forwards ease-out 50ms;
   top: 70px;
+}
+.main-content-page.projetos {
+  animation: entradaProjetos 2s forwards ease-out 50ms;
+  top: 138px;
+}
+.main-content-page.contatos {
+  animation: entradaContatos 2s forwards ease-out 50ms;
+  top: 207px;
 }
 
 @keyframes entrada {
   0% {
     transform: translateX(-105%);
-    min-height: 70px;
+    min-height: 69px;
   }
   50% {
     transform: translateX(0);
-    min-height: 70px;
+    min-height: 69px;
   }
   100% {
     min-height: 100vh;
+  }
+}
+@keyframes entradaCurriculo {
+  0% {
+    transform: translateX(-105%);
+    min-height: 69px;
+    top: 69px;
+  }
+  50% {
+    transform: translateX(0);
+    min-height: 69px;
+    top: 69px;
+  }
+  100% {
+    min-height: 100vh;
+    top: 0;
+  }
+}
+@keyframes entradaProjetos {
+  0% {
+    transform: translateX(-105%);
+    min-height: 69px;
+    top: 138px;
+  }
+  50% {
+    transform: translateX(0);
+    min-height: 69px;
+    top: 138px;
+  }
+  100% {
+    min-height: 100vh;
+    top: 0;
+  }
+}
+@keyframes entradaContatos {
+  0% {
+    transform: translateX(-105%);
+    min-height: 69px;
+    top: 207px;
+  }
+  50% {
+    transform: translateX(0);
+    min-height: 69px;
+    top: 207px;
+  }
+  100% {
+    min-height: 100vh;
+    top: 0;
   }
 }
 .page {
