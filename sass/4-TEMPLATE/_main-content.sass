@@ -10,16 +10,17 @@
     z-index: 1
     position: absolute
     width: 100%
+    overflow: hidden
     &.home
-        animation: entrada 2s forwards ease-out 50ms
+        animation: entrada 1s forwards ease-in 50ms
     &.curriculo
-        animation: entradaCurriculo 2s forwards ease-out 50ms
+        animation: entradaCurriculo 1s forwards ease-in 50ms
         top: 70px
     &.projetos
-        animation: entradaProjetos 2s forwards ease-out 50ms
+        animation: entradaProjetos 1s forwards ease-in 50ms
         top: 138px
     &.contatos
-        animation: entradaContatos 2s forwards ease-out 50ms
+        animation: entradaContatos 1s forwards ease-out 50ms
         top: 207px
 
 
@@ -28,69 +29,71 @@ $alturaInicial: 69px
 @keyframes entrada
     0%
         transform: translateX(-105%)
-        min-height: $alturaInicial
+        height: $alturaInicial
         content-visibility: hidden
     50%
         transform: translateX(0)
-        min-height: $alturaInicial
+        height: $alturaInicial
     99%
-        min-height: 100vh
+        height: 100vh
+        content-visibility: hidden
     100%
         content-visibility: visible
-        min-height: 100vh
+        height: 100vh
 
 
 @keyframes entradaCurriculo
     0%
         transform: translateX(-105%)
-        min-height: $alturaInicial
+        height: $alturaInicial
         content-visibility: hidden
         top: 69px
     50%
         transform: translateX(0)
-        min-height: $alturaInicial
+        height: $alturaInicial
         top: 69px
     99%
-        min-height: 100vh
+        height: 100vh
         top: 0
+        content-visibility: hidden
     100%
-        min-height: 100vh
+        height: 100vh
         top: 0
         content-visibility: visible
 
 @keyframes entradaProjetos
     0%
         transform: translateX(-105%)
-        min-height: $alturaInicial
+        height: $alturaInicial
         top: 138px
         content-visibility: hidden
     50%
         transform: translateX(0)
-        min-height: $alturaInicial
+        height: $alturaInicial
         top: 138px
     99%
-        min-height: 100vh
+        height: 100vh
         top: 0
     100%
-        min-height: 100vh
+        height: 100vh
         top: 0
         content-visibility: visible
 
 @keyframes entradaContatos
     0%
         transform: translateX(-105%)
-        min-height: $alturaInicial
+        height: $alturaInicial
         top: 207px
         content-visibility: hidden
     50%
         transform: translateX(0)
-        min-height: $alturaInicial
+        height: $alturaInicial
         top: 207px
     99%
-        min-height: 100vh
+        height: 100vh
         top: 0
     100%
-        min-height: 100vh
+        height: 100vh
         top: 0
         content-visibility: visible
     

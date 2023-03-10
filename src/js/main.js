@@ -1,5 +1,5 @@
 const menuItens = document.querySelectorAll('.menu-item')
-
+handleMenuItem('home')
 menuItens.forEach((menuItem) => {
   menuItem.addEventListener('click', (e) => {
     removeAllActives()

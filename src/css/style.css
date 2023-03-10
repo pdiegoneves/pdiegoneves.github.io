@@ -126,59 +126,62 @@ header.active + main {
   z-index: 1;
   position: absolute;
   width: 100%;
+  overflow: hidden;
 }
 .main-content-page.home {
-  animation: entrada 2s forwards ease-out 50ms;
+  animation: entrada 1s forwards ease-in 50ms;
 }
 .main-content-page.curriculo {
-  animation: entradaCurriculo 2s forwards ease-out 50ms;
+  animation: entradaCurriculo 1s forwards ease-in 50ms;
   top: 70px;
 }
 .main-content-page.projetos {
-  animation: entradaProjetos 2s forwards ease-out 50ms;
+  animation: entradaProjetos 1s forwards ease-in 50ms;
   top: 138px;
 }
 .main-content-page.contatos {
-  animation: entradaContatos 2s forwards ease-out 50ms;
+  animation: entradaContatos 1s forwards ease-out 50ms;
   top: 207px;
 }
 
 @keyframes entrada {
   0% {
     transform: translateX(-105%);
-    min-height: 69px;
+    height: 69px;
     content-visibility: hidden;
   }
   50% {
     transform: translateX(0);
-    min-height: 69px;
+    height: 69px;
   }
   99% {
-    min-height: 100vh;
+    height: 100vh;
+    content-visibility: hidden;
   }
   100% {
     content-visibility: visible;
-    min-height: 100vh;
+    height: 100vh;
   }
 }
 @keyframes entradaCurriculo {
   0% {
     transform: translateX(-105%);
-    min-height: 69px;
+    height: 69px;
     content-visibility: hidden;
     top: 69px;
   }
   50% {
     transform: translateX(0);
-    min-height: 69px;
+    height: 69px;
     top: 69px;
   }
   99% {
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
+    content-visibility: hidden;
   }
   100% {
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
     content-visibility: visible;
   }
@@ -186,21 +189,21 @@ header.active + main {
 @keyframes entradaProjetos {
   0% {
     transform: translateX(-105%);
-    min-height: 69px;
+    height: 69px;
     top: 138px;
     content-visibility: hidden;
   }
   50% {
     transform: translateX(0);
-    min-height: 69px;
+    height: 69px;
     top: 138px;
   }
   99% {
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
   }
   100% {
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
     content-visibility: visible;
   }
@@ -208,21 +211,21 @@ header.active + main {
 @keyframes entradaContatos {
   0% {
     transform: translateX(-105%);
-    min-height: 69px;
+    height: 69px;
     top: 207px;
     content-visibility: hidden;
   }
   50% {
     transform: translateX(0);
-    min-height: 69px;
+    height: 69px;
     top: 207px;
   }
   99% {
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
   }
   100% {
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
     content-visibility: visible;
   }
@@ -231,6 +234,21 @@ header.active + main {
   display: grid;
   grid-template-columns: 5vw auto;
   grid-template-rows: 100vh;
+}
+
+.grid-cards {
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+}
+.grid-cards .card {
+  width: 30%;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-shadow: 2px 3px 7px rgba(255, 255, 255, 0.2);
 }
 
 /*# sourceMappingURL=style.css.map */
