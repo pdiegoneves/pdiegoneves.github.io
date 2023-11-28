@@ -28,8 +28,8 @@ header {
 }
 
 #topo {
-    background-image: url("../assets/img/Bg-dobra1.png");
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(50px);
+    background: url("../assets/img/Bg-dobra1.png") #fff;
 }
 
 .topo {
