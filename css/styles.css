@@ -27,6 +27,11 @@ header {
     position: relative;
 }
 
+#topo {
+    background-image: url("../assets/img/Bg-dobra1.png");
+    backdrop-filter: blur(100px);
+}
+
 .topo {
     display: flex;
     justify-content: center;
