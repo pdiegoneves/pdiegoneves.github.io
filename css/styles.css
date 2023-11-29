@@ -68,11 +68,17 @@ header {
     margin-top: 50px;
 }
 
-.certificados picture img {
+.certificados-img {
     width: 1024px;
     border: 1px solid #3e3f71;
     border-radius: 15px;
+}
+
+.carousel {
+    width: 1024px;
+    border-radius: 15px;
     box-shadow: 6px 6px 12px #3e3f71;
+
 }
 
 .dobra {
