@@ -64,20 +64,18 @@ header {
     color: #3e3f71;
 }
 
-.certificados {
-    margin-top: 50px;
-}
 
 .certificados-img {
-    width: 1024px;
     border: 1px solid #3e3f71;
     border-radius: 15px;
 }
 
 .carousel {
-    width: 1024px;
     border-radius: 15px;
-    box-shadow: 6px 6px 12px #3e3f71;
+}
+
+.carousel-item {
+    width: 800px;
 
 }
 
@@ -118,10 +116,10 @@ header {
     }
 }
 
-.sobre {
-    gap: 50px;
+.sobre, .certificados {
+    gap: 15px;
 }
-.sobre-title {
+.sobre-title, .certificados-title {
     font-size: 3em;
     color: #3e3f71;
 }
@@ -168,5 +166,4 @@ header {
     text-decoration: none;
     color: #5554ae;  
     font-weight: 800;
-    
 }
