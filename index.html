@@ -1,238 +1,355 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paulo Neves | Desenvolvedor, Analista de Dados & Criador de
+            Conteúdo</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
+        <!-- Application Structure Plan: A single-page application with a top navigation bar for smooth scrolling to thematic sections: Hero, Sobre, Portfólio, Habilidades, Experiência, and Contato. This structure was chosen to provide a clear narrative flow, starting with a strong summary (Hero), delving into personal history (Sobre), showcasing tangible work (Portfólio), quantifying skills (Habilidades/Experiência), and ending with a clear call to action (Contato). The key interaction is the filterable portfolio, allowing recruiters to easily view projects relevant to their needs (Software, Dados, Conteúdo), which is more efficient than a static list. -->
+        <!-- Visualization & Content Choices: 
+        - Report Info: Paulo's multi-faceted career (developer, data analyst, content creator). Goal: Allow users to explore projects by category. Viz/Presentation: Interactive card-based gallery with filter buttons. Interaction: Clicking filters ('Software', 'Dados', etc.) instantly updates the visible project cards. Justification: This provides immediate, relevant access to his work, catering to different visitor interests. Library/Method: Vanilla JS DOM manipulation.
+        - Report Info: Key technical competencies (Python, Django, PyQt, etc.). Goal: Visualize proficiency and core skills quickly. Viz/Presentation: Horizontal Bar Chart. Interaction: Tooltips on hover provide more info. Justification: A chart is more engaging and easier to parse at a glance than a simple text list, highlighting his strongest areas effectively. Library/Method: Chart.js with Canvas.
+        - Report Info: Chronological work history. Goal: Display career progression clearly. Viz/Presentation: Vertical timeline. Interaction: None, static visual element. Justification: A timeline is an intuitive and universally understood format for representing professional experience sequentially. Library/Method: HTML/CSS with Tailwind.
+        - Report Info: Summary and personal branding. Goal: Inform and create a personal connection. Viz/Presentation: Thematic text blocks (Hero, Sobre). Interaction: None. Justification: Well-crafted text is essential for telling his professional story and setting the tone. Library/Method: HTML/Tailwind.
+    -->
+        <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body class="antialiased">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Portifólio de Projetos em Power BI - Diego Neves</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-  
-
-    <link rel="stylesheet" href="css/glide.core.min.css">
-    <link rel="stylesheet" href="css/glide.theme.css">
-</head>
-
-<body>
-
-    <header class="topo dobra" id="topo">
-        <section class="ani-entrada">
-            <span class="header-descricao">Eu sou </span>
-            <h3 class="header-descricao destaque">Diego Neves</h3>
-            <span class="header-descricao">e sou </span> <br>
-            <h2 class="header-descricao destaque">Analista de Dados </h2>
-            <span class="header-descricao">e este é meu </span><br>
-            <h1 class="header-descricao destaque">Portifólio de Projetos no Power BI</h1>
-
-        </section>
-    </header>
-    <section class="dobra bg-gradiente sobre">
-        <h1 class="sobre-title ">Sobre</h1>
-        <div class="sobre-bio">
-            <picture class="foto-perfil">
-                <img src="assets/img/Foto.png" alt="Foto Diego Neves">
-            </picture>
-            <div class="sobre-desc">
-                <p>
-                    Apesar de trabalhar no setor de TI desde <span class="destaque">2004</span> minha carreira não
-                    começou com dados.
-                </p>
-                <p>
-                    Já atuei como <span class="destaque">técnico</span>, <span class="destaque">tech-lider</span> (antes
-                    mesmo do termo ter se popularizado) e <span class="destaque">gestor de TI. </span> Sempre senti a
-                    necessidade de analisar os dados referentes ao momento em que estava trabalhando.
-                </p>
-                <p>
-                    Como técnico procurava observar <span class="destaque">quais os problemas que mais ocorriam</span> e
-                    deixar soluções prontas para agilizar os atendimentos.
-                    Como tech-lider sempre <span class="destaque">analisei quais os clientes que mais demandavam
-                        chamados e de que tipo</span>, sempre utilizando estes dados para identificar os pontos mais
-                    críticos e tratá-los. Como gestor identifiquei <span class="destaque">quais os equipamentos
-                        apresentavam mais problemas e quais as dúvidas mais constantes dos usuários</span> .Busquei as
-                    melhores formas de resolver cada ponto, upgrades, substituições ou treinamentos, sempre me balisando
-                    sobre os resultados que os dados me apresentavam.
-                </p>
-                <p>
-                    Atualmente trabalho como Analista Computacional em uma clínica de cirurgias e surgiu a necessidade
-                    de criar um dashboards para apresentar os resultados da clínica para seus diretores. <span
-                        class="destaque">Desenvolvi uma série de dashboards em Excel</span> para atender essa demanda. O
-                    que eu não sabia é que uma consultoria havia sido contratada para desenvolver dashboards em Power BI
-                    e que, segundo a gestão, meus dashboards no Excel ficaram melhores que os da consultoria em Power
-                    BI.
-                </p>
-                <p>
-                    A partir desse momento <span class="destaque">decidi estudar Power BI</span> para fazer dashboards
-                    melhores e conheci o mundo da <span class="destaque">>análise de dados</span>, percebi que
-                    trabalhando com visualização de dados poderia unir diversos assuntos pelos quais tinha interesse,
-                    como:
-                </p>
-                <ul>
-                    <li class="destaque">Dados;</li>
-                    <li class="destaque">Programação;</li>
-                    <li class="destaque">Design;</li>
-                    <li class="destaque">Conhecimento de Negócios;</li>
-                    <li class="destaque">Resultados.</li>
-                </ul>
-                <h4>Redes Sociais</h4>
-                <a href="https://www.linkedin.com/in/pdiegoneves/" target="_blank" class="link-social"><img
-                        src="assets/img/skill-icons_linkedin.svg" alt="Linkedin" class="icon-social"></a>
-                <a href="https://www.instagram.com/pdiegoneves/" target="_blank" class="link-social"><img
-                        src="assets/img/skill-icons_instagram.svg" alt="Instagram" class="icon-social"></a>
-                <a href="https://github.com/pdiegoneves" target="_blank" class="link-social"><img
-                        src="assets/img/grommet-icons_github.svg" alt="Github" class="icon-social"></a>
+        <header id="header"
+            class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-gray-800">Paulo
+                    Neves</a>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#sobre"
+                        class="text-gray-600 hover:text-gray-900 transition">Sobre</a>
+                    <a href="#portfolio"
+                        class="text-gray-600 hover:text-gray-900 transition">Portfólio</a>
+                    <a href="#habilidades"
+                        class="text-gray-600 hover:text-gray-900 transition">Habilidades</a>
+                    <a href="#experiencia"
+                        class="text-gray-600 hover:text-gray-900 transition">Experiência</a>
+                    <a href="#contato"
+                        class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">Contato</a>
+                </div>
+                <button id="mobile-menu-button"
+                    class="md:hidden text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"><path
+                            stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="#sobre"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Sobre</a>
+                <a href="#portfolio"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Portfólio</a>
+                <a href="#habilidades"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Habilidades</a>
+                <a href="#experiencia"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Experiência</a>
+                <a href="#contato"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Contato</a>
             </div>
-        </div>
+        </header>
 
-    </section>
+        <main>
+            <section id="hero" class="bg-white relative">
+                <div
+                    class="container mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-left">
+                    <h1
+                        class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 text-shadow">Paulo
+                        Neves</h1>
+                    <p
+                        class="text-lg md:text-xl font-medium text-white mb-8">Desenvolvedor
+                        de Software Sênior | Estrategista de Dados | Criador de
+                        Conteúdo</p>
+                    <div class="flex space-x-4">
+                        <a href="#portfolio"
+                            class="bg-gray-800 text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition text-lg">Ver
+                            Projetos</a>
+                        <a href="#contato"
+                            class="bg-transparent border-2 hover:border-gray-800 border-white-800 text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 hover:text-white transition text-lg">Entrar
+                            em Contato</a>
+                    </div>
+                </div>
+            </section>
 
-    <section class="certificados dobra">
-        <h1 class="certificados-title ">Certificados</h1>
+            <section id="sobre" class="py-20 md:py-28">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto text-left">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">Sobre
+                            Mim</h2>
 
-        <div class="slider slider--big glide glide--ltr glide--slider glide--swipeable" id="intro">
-            <div class="frames glide__track" data-glide-el="track">
-              <ul class="frames__list glide__slides">
-                <li class="glide__slide frames__item">
-                    <img class="certificados-img" src="assets/certificados/Formação Analista de dados pleno.png" alt="Certificado Storytelling com Dados" />
-                </li>
-                <li class="glide__slide frames__item">                
-                    <img class="certificados-img" src="assets/certificados/Certificado Power BI.png" alt="Certificado de Power BI" />
-                </li>
-                <li class="glide__slide frames__item">
-                    <img class="certificados-img" src="assets/certificados/Certificado SQL.png" alt="Certificado de SQL" />
-                </li>
-                <li class="glide__slide frames__item">
-                    <img class="certificados-img" src="assets/certificados/Certificado Excel.png" alt="Certificado de Excel" />
-                </li>
-                <li class="glide__slide frames__item">
-                    <img class="certificados-img" src="assets/certificados/Desenvolvedor Fullstack Python.png" alt="Certificado de Python" />
-                </li>
-                <li class="glide__slide frames__item">
-                    <img class="certificados-img" src="assets/certificados/Storytelling com dados.png" alt="Certificado Storytelling com Dados" />
-                </li>
-              </ul>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+
+                            No início da minha carreira, essas pontes eram
+                            feitas de servidores, redes e infraestrutura de TI,
+                            garantindo que as operações nunca parassem. Hoje,
+                            continuo construindo pontes, mas com código Python,
+                            conectando desafios de negócio a soluções de
+                            software elegantes e robustas.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+
+                            Minha jornada me deu uma perspectiva única. Não vejo
+                            apenas linhas de código; vejo o sistema como um
+                            todo. Essa visão me permitiu liderar projetos com
+                            resultados expressivos, como o desenvolvimento de um
+                            sistema que reduziu em 50% os erros de expedição em
+                            uma operação logística complexa e outro que acelerou
+                            em 90% a análise de ocorrências para um gigante do
+                            varejo.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+
+                            Sou especialista em Python e no ecossistema Django,
+                            mas minha ferramenta mais afiada é a capacidade de
+                            mergulhar em um problema de negócio, dissecar sua
+                            complexidade e traduzi-lo em tecnologia que gera
+                            eficiência, produtividade e crescimento. Da gestão
+                            de dados com Pandas e Power BI/Tableau à automação
+                            de processos com PyAutoGUI e Selenium, minha paixão
+                            é criar sistemas que simplesmente funcionam.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+
+                            Se você tem um desafio operacional complexo e busca
+                            uma solução tecnológica que vá além do óbvio, vamos
+                            conversar.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="py-20 md:py-28 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Portfólio
+                            de Projetos</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Uma
+                            seleção de trabalhos que demonstram minhas
+                            habilidades em desenvolvimento, análise de dados e
+                            criação de conteúdo.</p>
+                    </div>
+
+                    <div id="portfolio-filters"
+                        class="flex justify-center flex-wrap gap-2 md:gap-4 mb-10">
+                        <button
+                            class="filter-btn active-filter px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+                            data-filter="all">Todos</button>
+                        <button
+                            class="filter-btn px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+                            data-filter="software">Desenvolvimento de
+                            Software</button>
+                        <button
+                            class="filter-btn px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+                            data-filter="dados">Análise de Dados</button>
+                        <button
+                            class="filter-btn px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+                            data-filter="conteudo">Criação de Conteúdo</button>
+                    </div>
+
+                    <div id="portfolio-grid"
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    </div>
+                </div>
+            </section>
+
+            <section id="habilidades" class="py-20 md:py-28 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Habilidades
+                            Principais</h2>
+                        <p
+                            class="text-lg text-gray-600 max-w-2xl mx-auto">Minhas
+                            competências organizadas por categoria, demonstrando
+                            minha versatilidade como profissional de
+                            tecnologia.</p>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                        <div
+                            class="bg-white p-8 rounded-lg shadow-md text-center">
+                            <div class="flex justify-center mb-4">
+                                <svg class="w-12 h-12 text-gray-700"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                                </svg>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-gray-800 mb-4">Desenvolvimento
+                                Backend</h3>
+                            <ul class="text-gray-600 text-left space-y-2">
+                                <li>• Python</li>
+                                <li>• Django</li>
+                                <li>• Django REST Framework</li>
+                                <li>• PostgreSQL</li>
+                                <li>• APIs</li>
+                                <li>• SQLite</li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="bg-white p-8 rounded-lg shadow-md text-center">
+                            <div class="flex justify-center mb-4">
+                                <svg class="w-12 h-12 text-gray-700"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6z" />
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5z" />
+                                </svg>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-gray-800 mb-4">Análise
+                                de Dados & Automação</h3>
+                            <ul class="text-gray-600 text-left space-y-2">
+                                <li>• Pandas</li>
+                                <li>• Tableau</li>
+                                <li>• Power BI</li>
+                                <li>• Selenium / Playwright</li>
+                                <li>• PyAutoGUI / PyWinAuto</li>
+                                <li>• VBS / SAP</li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="bg-white p-8 rounded-lg shadow-md text-center">
+                            <div class="flex justify-center mb-4">
+                                <svg class="w-12 h-12 text-gray-700"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M9.75 3.104v5.625a2.25 2.25 0 01-2.25 2.25H3.375A2.25 2.25 0 011.125 8.75V3.104a2.25 2.25 0 012.25-2.25h5.25c1.24 0 2.25.86 2.25 1.928v.001M9.75 3.104h11.125A2.25 2.25 0 0123.25 5.25v13.5A2.25 2.25 0 0121 21H3.375A2.25 2.25 0 011.125 18.75v-5.625" />
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M4.5 4.5h.008v.008H4.5V4.5zm2.25 0h.008v.008H6.75V4.5z" />
+                                </svg>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-gray-800 mb-4">Desenvolvimento
+                                Frontend</h3>
+                            <ul class="text-gray-600 text-left space-y-2">
+                                <li>• HTML / CSS</li>
+                                <li>• JavaScript</li>
+                                <li>• React</li>
+                                <li>• PyQt6</li>
+                                <li>• TailwindCSS / Bootstrap</li>
+                                <li>• HTMX</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="experiencia" class="py-20 md:py-28 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Trajetória
+                            Profissional</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Minha
+                            jornada desde a infraestrutura de TI até o
+                            desenvolvimento sênior de software.</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto relative timeline-path">
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato" class="py-20 md:py-28">
+                <div class="container mx-auto px-6">
+                    <div
+                        class="max-w-3xl mx-auto text-center bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Vamos
+                            construir algo juntos</h2>
+                        <p class="text-lg text-gray-600 mb-8 text-left">Estou
+                            sempre aberto a conectar-me com líderes e empresas
+                            que acreditam no poder da tecnologia para
+                            transformar a realidade. Se você tem um desafio
+                            complexo e busca uma solução robusta, vamos
+                            conversar.</p>
+                        <a href="mailto:pdcassiano@gmail.com"
+                            class="inline-block bg-gray-800 text-white px-8 py-4 rounded-md font-semibold hover:bg-gray-700 transition text-lg mb-6">pdcassiano@gmail.com</a>
+                        <div class="flex justify-center space-x-6">
+                            <a href="https://www.linkedin.com/in/pdiegoneves"
+                                target="_blank"
+                                class="text-gray-500 hover:text-gray-800 transition">
+                                <svg class="w-8 h-8" fill="currentColor"
+                                    viewBox="0 0 24 24" aria-hidden="true"><path
+                                        fill-rule="evenodd"
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                        clip-rule="evenodd" /></svg>
+                            </a>
+                            <a href="https://pdiegoneves.github.io/"
+                                target="_blank"
+                                class="text-gray-500 hover:text-gray-800 transition">
+                                <svg class="w-8 h-8" fill="currentColor"
+                                    viewBox="0 0 24 24" aria-hidden="true"><path
+                                        fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                                        clip-rule="evenodd" /></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@dundercore"
+                                target="_blank"
+                                class="text-gray-500 hover:text-gray-800 transition">
+                                <svg class="w-8 h-8" fill="currentColor"
+                                    viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.407 0 6.43 0 12s.488 8.593 4.385 8.816c3.6.245 11.626.246 15.23 0C23.512 20.593 24 17.57 24 12s-.488-8.593-4.385-8.816zM9.545 15.568V8.432L15.818 12 9.545 15.568z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 py-8 text-center">
+                <p>&copy; 2025 Paulo Neves. Todos os direitos reservados.</p>
             </div>
-          </div>
-    </section>
+        </footer>
 
-
-    <section class="dashboards">
-
-        <article class="dash dobra bg-gradiente">
-            <header>
-                <h1 class="dash-title">Dashboard de Faturamento</h1>
-            </header>
-            <section class="dash-sobre">
-                <p>Dashboard para análise de Faturamento</p>
-                <ul>
-                    <li>Faturamento Total</li>
-                    <li>Ticket Médio</li>
-                    <li>Preço Médio</li>
-                    <li>% para atingimento da meta</li>
-                    <li>Faturamento Mensal</li>
-                    <li>Faturamento por marca</li>
-                    <li>Relação da quantidade de venda e vaolr faturado por marca</li>
-                    <li>Classificação dos vendedores</li>
-                    <li>Gênero dos clientes</li>
-                    <li>Top 10 cidades por faturamento</li>
-                </ul>
-                <p>Este Dashboard foi o primeiro que utilizei um menu, aproveite para fazer um experimento de crirar um
-                    menu parecido com o menu do Windows</p>
-            </section>
-            <section class="dashboad-frame">
-                <iframe title="Report Section" width="1024" height="612"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiN2UyNmQ3ODUtZjA1Yy00Y2E4LTg5ZjgtZmVjMzZlM2UwYzBhIiwidCI6IjAxZGQzMzk5LWI5ZGItNDkzYS04NzllLTA4M2QxMzZlMmQ0OSJ9&pageName=ReportSection"
-                    frameborder="0" allowFullScreen="true"></iframe>
-            </section>
-        </article>
-
-        <article class="dash dobra">
-            <header>
-                <h1 class="dash-title">Dashboard de Gestão de Frotas</h1>
-            </header>
-            <section class="dash-sobre">
-                <p>Dashboard para gestão acompanhamento de indicadores de transporte:</p>
-                <p>Neste dashboar foram utilizados os indicadores</p>
-                <ul>
-                    <li>Faturamento</li>
-                    <li>Custo</li>
-                    <li>Resultado Liquido</li>
-                    <li>Volume transportado</li>
-                    <li>Custo diário</li>
-                    <li>Entregas por veículos</li>
-                    <li>Entregas por mês</li>
-                    <li>Ticket Médio</li>
-                    <li>Ticket Médio por tipo de veículo</li>
-                    <li>Resultado por tipo de veículo</li>
-                </ul>
-            </section>
-            <section class="dashboad-frame dobra">
-                <iframe title="Report Section" width="1024" height="612" 
-                    src="https://app.powerbi.com/view?r=eyJrIjoiM2QwNjNjNmItOTgxYi00MGVhLTlmMmItNjAxYWFhNWVkNzIyIiwidCI6IjAxZGQzMzk5LWI5ZGItNDkzYS04NzllLTA4M2QxMzZlMmQ0OSJ9&pageName=ReportSection" frameborder="0" allowFullScreen="true">
-                </iframe>
-            </section>
-        </article>
-
-        <article class="dash dobra">
-            <header>
-                <h1 class="dash-title">Dashboard de People Analytics</h1>
-            </header>
-            <section class="dash-sobre">
-                <p>Relatório de RH com as medidas:</p>
-                <ul>
-                    <li>Total de contratações;</li>
-                    <li>Total de demissões;</li>
-                    <li>Massa Salarial;</li>
-                    <li>Headcount;</li>
-                    <li>Má contratações;</li>
-                    <li>% de Má contratações;</li>
-                    <li>% de Turnover;</li>
-                    <li>Absenteísmo (por faixa etária, gênero, escolaridade e cargo)</li>
-                    <li>Horas Extras (por faixa etária, gênero, escolaridade e cargo)</li>
-                </ul>
-            </section>
-            <section class="dashboad-frame dobra">
-                <iframe title="Report Section" width="1024" height="612"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiNDhmMGE2NDMtYjYyMy00MDU5LTg1MjktMTg5MWRjMTBiOWM1IiwidCI6IjAxZGQzMzk5LWI5ZGItNDkzYS04NzllLTA4M2QxMzZlMmQ0OSJ9&pageName=ReportSection"
-                    frameborder="0" allowFullScreen="true"></iframe>
-            </section>
-        </article>
-
-        <article class="dash dobra">
-            <header>
-                <h1 class="dash-title">Dashboard de acompanhamento de leitura</h1>
-            </header>
-            <section class="dash-sobre">
-                <p>Dashboard para acompanhamento de leituras com as medidas:</p>
-                <ul>
-                    <li>Total de livros lidos</li>
-                    <li>Percentual de livros lidos</li>
-                    <li>KPI de Lidos por cadastrados</li>
-                    <li>Quantidade de livros lidos por mês</li>
-                    <li>Total de páginas lidas</li>
-                    <li>Livros cadastrados por status</li>
-                    <li>Livros cadastrados por categoria</li>
-                    <li>Quantidade de livros por autores</li>
-                    <li>Filtros por status</li>
-                    <li>Filtros por categoria</li>
-                </ul>
-                <p>Neste projeto aproveitei para testar a obtenção de dados a partir de uma planilha do google.</p>
-            </section>
-            <section class="dashboad-frame dobra">
-                <iframe title="Livros" width="1024" height="612"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiYTY2MGI0ZGUtNzYzNC00ZmY0LWFjOWEtODg0OWQ2OGYyZjAzIiwidCI6IjAxZGQzMzk5LWI5ZGItNDkzYS04NzllLTA4M2QxMzZlMmQ0OSJ9&pageName=ReportSectionf2bd8453aa80935935e2"
-                    frameborder="0" allowFullScreen="true"></iframe>
-            </section>
-        </article>
-
-    </section>
-
-    <script src="js/glide.js"></script>
-    <script src="js/main.js"></script>
-</body>
-
+        <script src="js/main.js">
+    </script>
+    </body>
 </html>

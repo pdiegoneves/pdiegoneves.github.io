@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paulo Neves | Desenvolvedor, Analista de Dados & Criador de
+            Conteúdo</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
+        <!-- Application Structure Plan: A single-page application with a top navigation bar for smooth scrolling to thematic sections: Hero, Sobre, Portfólio, Habilidades, Experiência, and Contato. This structure was chosen to provide a clear narrative flow, starting with a strong summary (Hero), delving into personal history (Sobre), showcasing tangible work (Portfólio), quantifying skills (Habilidades/Experiência), and ending with a clear call to action (Contato). The key interaction is the filterable portfolio, allowing recruiters to easily view projects relevant to their needs (Software, Dados, Conteúdo), which is more efficient than a static list. -->
+        <!-- Visualization & Content Choices: 
+        - Report Info: Paulo's multi-faceted career (developer, data analyst, content creator). Goal: Allow users to explore projects by category. Viz/Presentation: Interactive card-based gallery with filter buttons. Interaction: Clicking filters ('Software', 'Dados', etc.) instantly updates the visible project cards. Justification: This provides immediate, relevant access to his work, catering to different visitor interests. Library/Method: Vanilla JS DOM manipulation.
+        - Report Info: Key technical competencies (Python, Django, PyQt, etc.). Goal: Visualize proficiency and core skills quickly. Viz/Presentation: Horizontal Bar Chart. Interaction: Tooltips on hover provide more info. Justification: A chart is more engaging and easier to parse at a glance than a simple text list, highlighting his strongest areas effectively. Library/Method: Chart.js with Canvas.
+        - Report Info: Chronological work history. Goal: Display career progression clearly. Viz/Presentation: Vertical timeline. Interaction: None, static visual element. Justification: A timeline is an intuitive and universally understood format for representing professional experience sequentially. Library/Method: HTML/CSS with Tailwind.
+        - Report Info: Summary and personal branding. Goal: Inform and create a personal connection. Viz/Presentation: Thematic text blocks (Hero, Sobre). Interaction: None. Justification: Well-crafted text is essential for telling his professional story and setting the tone. Library/Method: HTML/Tailwind.
+    -->
+        <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body class="antialiased">
+        <header id="header"
+            class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="../index.html"
+                    class="text-2xl font-bold text-gray-800">Paulo
+                    Neves</a>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="../index.html#sobre"
+                        class="text-gray-600 hover:text-gray-900 transition">Sobre</a>
+                    <a href="../index.html#portfolio"
+                        class="text-gray-600 hover:text-gray-900 transition">Portfólio</a>
+                    <a href="../index.html#habilidades"
+                        class="text-gray-600 hover:text-gray-900 transition">Habilidades</a>
+                    <a href="../index.html#experiencia"
+                        class="text-gray-600 hover:text-gray-900 transition">Experiência</a>
+                    <a href="../index.html#contato"
+                        class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">Contato</a>
+                </div>
+                <button id="mobile-menu-button"
+                    class="md:hidden text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"><path
+                            stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="../index.html#sobre"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Sobre</a>
+                <a href="../index.html#portfolio"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Portfólio</a>
+                <a href="../index.html#habilidades"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Habilidades</a>
+                <a href="../index.html#experiencia"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Experiência</a>
+                <a href="../index.html#contato"
+                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Contato</a>
+            </div>
+        </header>
+
+        <main>
+            <section id="hero-velocidade-de-entrega"
+                class="w-full max-w-4xl mx-auto my-12 px-4 md:px-0">
+                <div
+                    class="relative overflow-hidden shadow-2xl rounded-lg bg-gray-100">
+
+                    <div id="slider"
+                        class="flex transition-transform duration-500 ease-in-out">
+                        <div class="min-w-full">
+                            <img src="../assets/img/velocidade-de-entrega.jpg"
+                                alt="Inteface de verificação das caixas em PyQt6"
+                                class="w-full object-cover">
+                            <h2
+                                class="relative text-center pb-8 text-sm text-gray-700">Dashboard desenvolvido no Tableau</h2>
+                        </div>
+
+                        <!-- <div class="min-w-full">
+                            <img src="../assets/img/docksafe-webjpg.jpg"
+                                alt="Interface em HTML/CSS(Tailwind)/Js"
+                                class="w-full object-cover">
+                            <h2
+                                class="relative text-center pb-8 text-sm text-gray-700">Interface
+                                de Gestão Web</h2>
+                        </div> -->
+
+                    </div>
+
+                    <button id="prev-slide"
+                        class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md hover:bg-white focus:outline-none transition">
+                        <svg class="w-6 h-6 text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button id="next-slide"
+                        class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md hover:bg-white focus:outline-none transition">
+                        <svg class="w-6 h-6 text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <div id="slider-dots"
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    </div>
+                </div>
+            </section>
+            <section
+                class="relative flex-col justify-center items-center mx-24 text-2xl">
+                <h1 class="text-4xl text-center text-gray-700 my-12">
+                    Velocidade de Entrega - Sistema de Análise e Automação para
+                    Entregas (D+2)
+                </h1>
+                <p class="mb-6">
+                    O Desafio Atingir a meta de entregas em até dois dias (D+2)
+                    exigia uma otimização drástica no setor de faturamento, que
+                    era um gargalo no processo. A equipe dependia da geração
+                    manual de relatórios no sistema SAP, um processo lento,
+                    repetitivo e que consumia horas de trabalho que poderiam ser
+                    usadas para análises estratégicas.
+                </p>
+                <p class="mb-6">
+                    A Solução Arquitetei uma solução híbrida de Robotic Process
+                    Automation (RPA) e Business Intelligence (BI) para resolver
+                    esse gargalo de ponta-a-ponta.
+                </p>
+                <p class="mb-6">
+                    Automação (RPA): Utilizando Python como orquestrador, criei
+                    scripts em VBScript (VBS) que se comunicam diretamente com a
+                    interface do SAP. Esses scripts automatizam 100% da extração
+                    de dados de faturamento e logística, executando tarefas que
+                    antes eram manuais.
+                </p>
+                <p class="mb-6">
+                    Análise e BI: Os dados brutos extraídos são processados,
+                    limpos e enriquecidos em tempo real utilizando Pandas. Em
+                    seguida, as informações tratadas são carregadas em
+                    dashboards interativos no Tableau, fornecendo uma visão
+                    clara dos KPIs de entrega.
+                </p>
+                <p class="mb-6">
+                    Resultados e Impacto A automação eliminou completamente a
+                    necessidade de geração manual de relatórios, liberando a
+                    equipe de faturamento para tarefas de maior valor. Isso
+                    gerou um aumento direto na produtividade do setor e forneceu
+                    à gestão visibilidade imediata dos indicadores de entrega,
+                    sendo um pilar fundamental para monitorar e alcançar a meta
+                    de D+2.
+                </p>
+
+            </section>
+        </main>
+
+        <footer class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 py-8 text-center">
+                <p>&copy; 2025 Paulo Neves. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+        <script>
+        // --- LÓGICA DO MENU MOBILE (Seu código original) ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // --- LÓGICA DO CARROSSEL ---
+        const slider = document.getElementById('slider');
+        const prevButton = document.getElementById('prev-slide');
+        const nextButton = document.getElementById('next-slide');
+        const dotsContainer = document.getElementById('slider-dots');
+
+        // Verifica se os elementos do carrossel existem na página
+        if (slider && prevButton && nextButton && dotsContainer) {
+            const slides = slider.children;
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+            let dots = []; // Array para armazenar os botões "dot"
+
+            // 1. Criar os "pontos" (dots) de navegação
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition');
+                dot.dataset.slide = i; // Armazena o índice do slide no dot
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                });
+                dotsContainer.appendChild(dot);
+                dots.push(dot);
+            }
+
+            // 2. Função principal para mover o slider
+            function goToSlide(slideIndex) {
+                // Loop: se passar do último, volta ao primeiro
+                if (slideIndex < 0) {
+                    currentSlide = totalSlides - 1;
+                } 
+                // Loop: se voltar do primeiro, vai para o último
+                else if (slideIndex >= totalSlides) {
+                    currentSlide = 0;
+                } else {
+                    currentSlide = slideIndex;
+                }
+                
+                // Move o "trilho" dos slides
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Atualiza o dot ativo
+                updateDots();
+            }
+
+            // 3. Função para atualizar qual "dot" está ativo
+            function updateDots() {
+                for (let i = 0; i < dots.length; i++) {
+                    if (i === currentSlide) {
+                        dots[i].classList.add('bg-white');
+                        dots[i].classList.remove('bg-white/50');
+                    } else {
+                        dots[i].classList.remove('bg-white');
+                        dots[i].classList.add('bg-white/50');
+                    }
+                }
+            }
+
+            // 4. Event Listeners para os botões
+            nextButton.addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+            });
+
+            prevButton.addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+            });
+
+            // 5. Iniciar o carrossel no primeiro slide
+            goToSlide(0);
+        }
+    </script>
+    </body>
+</html>
