@@ -1,355 +1,365 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Paulo Neves | Desenvolvedor, Analista de Dados & Criador de
-            Conteúdo</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
-        <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
-        <!-- Application Structure Plan: A single-page application with a top navigation bar for smooth scrolling to thematic sections: Hero, Sobre, Portfólio, Habilidades, Experiência, and Contato. This structure was chosen to provide a clear narrative flow, starting with a strong summary (Hero), delving into personal history (Sobre), showcasing tangible work (Portfólio), quantifying skills (Habilidades/Experiência), and ending with a clear call to action (Contato). The key interaction is the filterable portfolio, allowing recruiters to easily view projects relevant to their needs (Software, Dados, Conteúdo), which is more efficient than a static list. -->
-        <!-- Visualization & Content Choices: 
-        - Report Info: Paulo's multi-faceted career (developer, data analyst, content creator). Goal: Allow users to explore projects by category. Viz/Presentation: Interactive card-based gallery with filter buttons. Interaction: Clicking filters ('Software', 'Dados', etc.) instantly updates the visible project cards. Justification: This provides immediate, relevant access to his work, catering to different visitor interests. Library/Method: Vanilla JS DOM manipulation.
-        - Report Info: Key technical competencies (Python, Django, PyQt, etc.). Goal: Visualize proficiency and core skills quickly. Viz/Presentation: Horizontal Bar Chart. Interaction: Tooltips on hover provide more info. Justification: A chart is more engaging and easier to parse at a glance than a simple text list, highlighting his strongest areas effectively. Library/Method: Chart.js with Canvas.
-        - Report Info: Chronological work history. Goal: Display career progression clearly. Viz/Presentation: Vertical timeline. Interaction: None, static visual element. Justification: A timeline is an intuitive and universally understood format for representing professional experience sequentially. Library/Method: HTML/CSS with Tailwind.
-        - Report Info: Summary and personal branding. Goal: Inform and create a personal connection. Viz/Presentation: Thematic text blocks (Hero, Sobre). Interaction: None. Justification: Well-crafted text is essential for telling his professional story and setting the tone. Library/Method: HTML/Tailwind.
-    -->
-        <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body class="antialiased">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diego Neves — Desenvolvedor Sênior e Estrategista de Dados. Dashboards, automações, agentes de atendimento e sistemas de apoio à decisão.">
+    <title>Diego Neves | Tecnologia que gera resultado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-        <header id="header"
-            class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-            <nav
-                class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-gray-800">Paulo
-                    Neves</a>
-                <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#sobre"
-                        class="text-gray-600 hover:text-gray-900 transition">Sobre</a>
-                    <a href="#portfolio"
-                        class="text-gray-600 hover:text-gray-900 transition">Portfólio</a>
-                    <a href="#habilidades"
-                        class="text-gray-600 hover:text-gray-900 transition">Habilidades</a>
-                    <a href="#experiencia"
-                        class="text-gray-600 hover:text-gray-900 transition">Experiência</a>
-                    <a href="#contato"
-                        class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">Contato</a>
-                </div>
-                <button id="mobile-menu-button"
-                    class="md:hidden text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"><path
-                            stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </nav>
-            <div id="mobile-menu" class="hidden md:hidden">
-                <a href="#sobre"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Sobre</a>
-                <a href="#portfolio"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Portfólio</a>
-                <a href="#habilidades"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Habilidades</a>
-                <a href="#experiencia"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Experiência</a>
-                <a href="#contato"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Contato</a>
+    <!-- NAV -->
+    <header id="header" class="header">
+        <nav class="nav">
+            <a href="#" class="nav__logo"><span class="accent">D</span>iego <span class="accent">N</span>eves</a>
+            <div class="nav__links" id="nav-links">
+                <a href="#sobre" class="nav__link">Sobre</a>
+                <a href="#servicos" class="nav__link">Serviços</a>
+                <a href="#portfolio" class="nav__link">Portfólio</a>
+                <a href="#experiencia" class="nav__link">Trajetória</a>
+                <a href="#contato" class="nav__cta">Agendar Reunião</a>
             </div>
-        </header>
+            <button class="nav__mobile-btn" id="mobile-menu-button" aria-label="Menu">
+                <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </nav>
+        <div class="nav__mobile hidden" id="mobile-menu">
+            <a href="#sobre" class="nav__mobile-link">Sobre</a>
+            <a href="#servicos" class="nav__mobile-link">Serviços</a>
+            <a href="#portfolio" class="nav__mobile-link">Portfólio</a>
+            <a href="#experiencia" class="nav__mobile-link">Trajetória</a>
+            <a href="#contato" class="nav__mobile-link nav__mobile-cta">Agendar Reunião</a>
+        </div>
+    </header>
 
-        <main>
-            <section id="hero" class="bg-white relative">
-                <div
-                    class="container mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-left">
-                    <h1
-                        class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 text-shadow">Paulo
-                        Neves</h1>
-                    <p
-                        class="text-lg md:text-xl font-medium text-white mb-8">Desenvolvedor
-                        de Software Sênior | Estrategista de Dados | Criador de
-                        Conteúdo</p>
-                    <div class="flex space-x-4">
-                        <a href="#portfolio"
-                            class="bg-gray-800 text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition text-lg">Ver
-                            Projetos</a>
-                        <a href="#contato"
-                            class="bg-transparent border-2 hover:border-gray-800 border-white-800 text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 hover:text-white transition text-lg">Entrar
-                            em Contato</a>
+    <main>
+
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="hero__container container">
+                <div class="hero__text">
+                    <span class="hero__badge">Desenvolvedor Sênior &middot; Estrategista de Dados</span>
+                    <h1 class="hero__title">
+                        Transformo operações em<br>
+                        <span class="accent">vantagem competitiva</span>
+                    </h1>
+                    <p class="hero__sub">
+                        O que construí para a Natura — dashboards, automações e sistemas de decisão — posso construir para a sua operação.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#portfolio" class="btn btn--primary">Ver Projetos</a>
+                        <a href="#contato" class="btn btn--ghost">Agendar Reunião &rarr;</a>
+                    </div>
+                    <div class="hero__social">
+                        <a href="https://www.linkedin.com/in/pdiegoneves" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://github.com/pdiegoneves" target="_blank" class="social-link" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@dundercore" target="_blank" class="social-link" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.407 0 6.43 0 12s.488 8.593 4.385 8.816c3.6.245 11.626.246 15.23 0C23.512 20.593 24 17.57 24 12s-.488-8.593-4.385-8.816zM9.545 15.568V8.432L15.818 12 9.545 15.568z" clip-rule="evenodd"/></svg>
+                        </a>
                     </div>
                 </div>
-            </section>
-
-            <section id="sobre" class="py-20 md:py-28">
-                <div class="container mx-auto px-6">
-                    <div class="max-w-4xl mx-auto text-left">
-                        <h2
-                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">Sobre
-                            Mim</h2>
-
-                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
-
-                            No início da minha carreira, essas pontes eram
-                            feitas de servidores, redes e infraestrutura de TI,
-                            garantindo que as operações nunca parassem. Hoje,
-                            continuo construindo pontes, mas com código Python,
-                            conectando desafios de negócio a soluções de
-                            software elegantes e robustas.
-                        </p>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
-
-                            Minha jornada me deu uma perspectiva única. Não vejo
-                            apenas linhas de código; vejo o sistema como um
-                            todo. Essa visão me permitiu liderar projetos com
-                            resultados expressivos, como o desenvolvimento de um
-                            sistema que reduziu em 50% os erros de expedição em
-                            uma operação logística complexa e outro que acelerou
-                            em 90% a análise de ocorrências para um gigante do
-                            varejo.
-                        </p>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
-
-                            Sou especialista em Python e no ecossistema Django,
-                            mas minha ferramenta mais afiada é a capacidade de
-                            mergulhar em um problema de negócio, dissecar sua
-                            complexidade e traduzi-lo em tecnologia que gera
-                            eficiência, produtividade e crescimento. Da gestão
-                            de dados com Pandas e Power BI/Tableau à automação
-                            de processos com PyAutoGUI e Selenium, minha paixão
-                            é criar sistemas que simplesmente funcionam.
-                        </p>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-4">
-
-                            Se você tem um desafio operacional complexo e busca
-                            uma solução tecnológica que vá além do óbvio, vamos
-                            conversar.
-                        </p>
-                    </div>
+                <div class="hero__image">
+                    <div class="hero__image-glow"></div>
+                    <img src="assets/img/foto-perfil.jpg" alt="Diego Neves" class="hero__photo">
                 </div>
-            </section>
-
-            <section id="portfolio" class="py-20 md:py-28 bg-white">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-12">
-                        <h2
-                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Portfólio
-                            de Projetos</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Uma
-                            seleção de trabalhos que demonstram minhas
-                            habilidades em desenvolvimento, análise de dados e
-                            criação de conteúdo.</p>
-                    </div>
-
-                    <div id="portfolio-filters"
-                        class="flex justify-center flex-wrap gap-2 md:gap-4 mb-10">
-                        <button
-                            class="filter-btn active-filter px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
-                            data-filter="all">Todos</button>
-                        <button
-                            class="filter-btn px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
-                            data-filter="software">Desenvolvimento de
-                            Software</button>
-                        <button
-                            class="filter-btn px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
-                            data-filter="dados">Análise de Dados</button>
-                        <button
-                            class="filter-btn px-4 py-2 text-sm md:text-base font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-300 transition"
-                            data-filter="conteudo">Criação de Conteúdo</button>
-                    </div>
-
-                    <div id="portfolio-grid"
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    </div>
-                </div>
-            </section>
-
-            <section id="habilidades" class="py-20 md:py-28 bg-gray-50">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-12">
-                        <h2
-                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Habilidades
-                            Principais</h2>
-                        <p
-                            class="text-lg text-gray-600 max-w-2xl mx-auto">Minhas
-                            competências organizadas por categoria, demonstrando
-                            minha versatilidade como profissional de
-                            tecnologia.</p>
-                    </div>
-
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-                        <div
-                            class="bg-white p-8 rounded-lg shadow-md text-center">
-                            <div class="flex justify-center mb-4">
-                                <svg class="w-12 h-12 text-gray-700"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
-                                </svg>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-gray-800 mb-4">Desenvolvimento
-                                Backend</h3>
-                            <ul class="text-gray-600 text-left space-y-2">
-                                <li>• Python</li>
-                                <li>• Django</li>
-                                <li>• Django REST Framework</li>
-                                <li>• PostgreSQL</li>
-                                <li>• APIs</li>
-                                <li>• SQLite</li>
-                            </ul>
-                        </div>
-
-                        <div
-                            class="bg-white p-8 rounded-lg shadow-md text-center">
-                            <div class="flex justify-center mb-4">
-                                <svg class="w-12 h-12 text-gray-700"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6z" />
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5z" />
-                                </svg>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-gray-800 mb-4">Análise
-                                de Dados & Automação</h3>
-                            <ul class="text-gray-600 text-left space-y-2">
-                                <li>• Pandas</li>
-                                <li>• Tableau</li>
-                                <li>• Power BI</li>
-                                <li>• Selenium / Playwright</li>
-                                <li>• PyAutoGUI / PyWinAuto</li>
-                                <li>• VBS / SAP</li>
-                            </ul>
-                        </div>
-
-                        <div
-                            class="bg-white p-8 rounded-lg shadow-md text-center">
-                            <div class="flex justify-center mb-4">
-                                <svg class="w-12 h-12 text-gray-700"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M9.75 3.104v5.625a2.25 2.25 0 01-2.25 2.25H3.375A2.25 2.25 0 011.125 8.75V3.104a2.25 2.25 0 012.25-2.25h5.25c1.24 0 2.25.86 2.25 1.928v.001M9.75 3.104h11.125A2.25 2.25 0 0123.25 5.25v13.5A2.25 2.25 0 0121 21H3.375A2.25 2.25 0 011.125 18.75v-5.625" />
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M4.5 4.5h.008v.008H4.5V4.5zm2.25 0h.008v.008H6.75V4.5z" />
-                                </svg>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-gray-800 mb-4">Desenvolvimento
-                                Frontend</h3>
-                            <ul class="text-gray-600 text-left space-y-2">
-                                <li>• HTML / CSS</li>
-                                <li>• JavaScript</li>
-                                <li>• React</li>
-                                <li>• PyQt6</li>
-                                <li>• TailwindCSS / Bootstrap</li>
-                                <li>• HTMX</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section id="experiencia" class="py-20 md:py-28 bg-white">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16">
-                        <h2
-                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Trajetória
-                            Profissional</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Minha
-                            jornada desde a infraestrutura de TI até o
-                            desenvolvimento sênior de software.</p>
-                    </div>
-                    <div class="max-w-3xl mx-auto relative timeline-path">
-                    </div>
-                </div>
-            </section>
-
-            <section id="contato" class="py-20 md:py-28">
-                <div class="container mx-auto px-6">
-                    <div
-                        class="max-w-3xl mx-auto text-center bg-white p-8 md:p-12 rounded-lg shadow-lg">
-                        <h2
-                            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Vamos
-                            construir algo juntos</h2>
-                        <p class="text-lg text-gray-600 mb-8 text-left">Estou
-                            sempre aberto a conectar-me com líderes e empresas
-                            que acreditam no poder da tecnologia para
-                            transformar a realidade. Se você tem um desafio
-                            complexo e busca uma solução robusta, vamos
-                            conversar.</p>
-                        <a href="mailto:pdcassiano@gmail.com"
-                            class="inline-block bg-gray-800 text-white px-8 py-4 rounded-md font-semibold hover:bg-gray-700 transition text-lg mb-6">pdcassiano@gmail.com</a>
-                        <div class="flex justify-center space-x-6">
-                            <a href="https://www.linkedin.com/in/pdiegoneves"
-                                target="_blank"
-                                class="text-gray-500 hover:text-gray-800 transition">
-                                <svg class="w-8 h-8" fill="currentColor"
-                                    viewBox="0 0 24 24" aria-hidden="true"><path
-                                        fill-rule="evenodd"
-                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                                        clip-rule="evenodd" /></svg>
-                            </a>
-                            <a href="https://pdiegoneves.github.io/"
-                                target="_blank"
-                                class="text-gray-500 hover:text-gray-800 transition">
-                                <svg class="w-8 h-8" fill="currentColor"
-                                    viewBox="0 0 24 24" aria-hidden="true"><path
-                                        fill-rule="evenodd"
-                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                                        clip-rule="evenodd" /></svg>
-                            </a>
-                            <a href="https://www.youtube.com/@dundercore"
-                                target="_blank"
-                                class="text-gray-500 hover:text-gray-800 transition">
-                                <svg class="w-8 h-8" fill="currentColor"
-                                    viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.407 0 6.43 0 12s.488 8.593 4.385 8.816c3.6.245 11.626.246 15.23 0C23.512 20.593 24 17.57 24 12s-.488-8.593-4.385-8.816zM9.545 15.568V8.432L15.818 12 9.545 15.568z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="bg-gray-800 text-white">
-            <div class="container mx-auto px-6 py-8 text-center">
-                <p>&copy; 2025 Paulo Neves. Todos os direitos reservados.</p>
             </div>
-        </footer>
+            <div class="hero__scroll">
+                <span>scroll</span>
+                <div class="hero__scroll-dot"></div>
+            </div>
+        </section>
 
-        <script src="js/main.js">
-    </script>
-    </body>
+        <!-- MÉTRICAS -->
+        <section id="metricas" class="metrics">
+            <div class="container">
+                <div class="metrics__grid">
+                    <div class="metric reveal">
+                        <div class="metric__number">
+                            <span class="metric__unit">R$</span><span class="counter" data-target="16">0</span><span class="metric__unit">M</span>
+                        </div>
+                        <p class="metric__label">de economia com<br>erros de expedição no 1º ano</p>
+                    </div>
+                    <div class="metric__divider"></div>
+                    <div class="metric reveal" style="--delay: 0.1s">
+                        <div class="metric__number">
+                            <span class="counter" data-target="90">0</span><span class="metric__unit">%</span>
+                        </div>
+                        <p class="metric__label">ganho em tempo<br>de análise</p>
+                    </div>
+                    <div class="metric__divider"></div>
+                    <div class="metric reveal" style="--delay: 0.2s">
+                        <div class="metric__number">
+                            <span class="counter" data-target="15">0</span><span class="metric__unit">+</span>
+                        </div>
+                        <p class="metric__label">anos construindo<br>soluções de TI</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="sobre section-light">
+            <div class="container">
+                <div class="sobre__grid">
+                    <div class="sobre__text">
+                        <span class="section-label reveal">Sobre</span>
+                        <h2 class="section-title reveal">Tecnologia com visão de negócio</h2>
+                        <p class="sobre__p reveal">Comecei na infraestrutura de TI — servidores, redes, operações que nunca podiam parar. Hoje construo sistemas com Python e Django, mas o que mudou não foi a ferramenta: foi a escala do impacto.</p>
+                        <p class="sobre__p reveal" style="--delay: 0.1s">Não vejo apenas linhas de código. Vejo o processo, o gargalo, o custo invisível. Essa visão me permitiu criar o DockSafe — sistema que reduziu 50% dos erros de expedição na TPC Logística — e acelerar em 90% a análise de ocorrências na Carajás Home Center.</p>
+                        <p class="sobre__p reveal" style="--delay: 0.2s">Hoje aplico esse mesmo modelo na Natura. O que construo lá, posso construir para a sua operação.</p>
+                    </div>
+                    <div class="sobre__skills reveal" style="--delay: 0.15s">
+                        <h3 class="sobre__skills-title">Stack principal</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-bar__header"><span>Python</span><span>95%</span></div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="95"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header"><span>Django &amp; APIs REST</span><span>90%</span></div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="90"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header"><span>Power BI &amp; Tableau</span><span>85%</span></div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header"><span>SQL &amp; Bancos de Dados</span><span>85%</span></div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar__header"><span>Automações RPA</span><span>88%</span></div>
+                                <div class="skill-bar__track"><div class="skill-bar__fill" data-width="88"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" class="servicos section-gray">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label reveal">O que faço</span>
+                    <h2 class="section-title reveal">Soluções que geram resultado</h2>
+                    <p class="section-sub reveal">Cada entrega é construída com foco no seu processo, não em tecnologia pela tecnologia.</p>
+                </div>
+                <div class="servicos__grid">
+                    <div class="servico-card reveal">
+                        <div class="servico-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
+                        </div>
+                        <h3>Dashboards &amp; BI</h3>
+                        <p>Painéis gerenciais que transformam dados brutos em decisões rápidas. Da coleta ao visual, sem planilha manual.</p>
+                        <div class="servico-card__tags">
+                            <span>Power BI</span><span>Tableau</span><span>React</span><span>Python</span>
+                        </div>
+                    </div>
+                    <div class="servico-card reveal" style="--delay: 0.1s">
+                        <div class="servico-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+                        </div>
+                        <h3>Automações (RPA)</h3>
+                        <p>Elimine tarefas repetitivas. Integração com SAP, ERP e sistemas legados. Seu time foca no que importa.</p>
+                        <div class="servico-card__tags">
+                            <span>Python</span><span>Selenium</span><span>SAP</span><span>PyAutoGUI</span>
+                        </div>
+                    </div>
+                    <div class="servico-card reveal" style="--delay: 0.2s">
+                        <div class="servico-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V20l4.155-4.155"/></svg>
+                        </div>
+                        <h3>Agentes de Atendimento</h3>
+                        <p>Bots inteligentes para triagem e atendimento automático. Responde, encaminha e registra — 24 horas.</p>
+                        <div class="servico-card__tags">
+                            <span>WhatsApp API</span><span>IA</span><span>Python</span><span>Integração</span>
+                        </div>
+                    </div>
+                    <div class="servico-card reveal" style="--delay: 0.3s">
+                        <div class="servico-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+                        </div>
+                        <h3>Sistemas de Apoio à Decisão</h3>
+                        <p>Sistemas web para acompanhamento de operações em tempo real. Do dado bruto à ação correta, na hora certa.</p>
+                        <div class="servico-card__tags">
+                            <span>Django</span><span>APIs REST</span><span>React</span><span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODELO COMERCIAL -->
+        <section id="modelo" class="modelo section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label section-label--light reveal">Modelo comercial</span>
+                    <h2 class="section-title section-title--light reveal">Um modelo diferente do mercado</h2>
+                    <p class="section-sub section-sub--light reveal">O mercado cobra R$1.000–R$3.000 de setup antes de entregar qualquer coisa, mais a mensalidade. Aqui é diferente.</p>
+                </div>
+                <div class="modelo__steps">
+                    <div class="modelo-step reveal">
+                        <div class="modelo-step__num">01</div>
+                        <h3>Taxa de estrutura</h3>
+                        <p>Você paga uma taxa enquanto a gente monta tudo. Sem setup surpresa, sem promessa vazia.</p>
+                    </div>
+                    <div class="modelo__arrow reveal">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                    </div>
+                    <div class="modelo-step reveal" style="--delay: 0.1s">
+                        <div class="modelo-step__num">02</div>
+                        <h3>Mês de avaliação</h3>
+                        <p>Sistema funcionando, você avalia com calma. Sem compromisso. Se não fizer sentido, encerra sem custo.</p>
+                    </div>
+                    <div class="modelo__arrow reveal" style="--delay: 0.1s">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                    </div>
+                    <div class="modelo-step reveal" style="--delay: 0.2s">
+                        <div class="modelo-step__num">03</div>
+                        <h3>Contrato anual</h3>
+                        <p>Só depois de validado. Valor fixo, transparente, sem surpresa. Proposta detalhada antes de qualquer assinatura.</p>
+                    </div>
+                </div>
+                <div class="modelo__quote reveal">
+                    <blockquote>"Você testa de verdade antes de assinar qualquer coisa."</blockquote>
+                    <a href="#contato" class="btn btn--primary">Quero uma proposta &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFÓLIO -->
+        <section id="portfolio" class="portfolio section-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label reveal">Portfólio</span>
+                    <h2 class="section-title reveal">Projetos com resultado real</h2>
+                    <p class="section-sub reveal">Uma seleção dos sistemas que já construí e o impacto gerado em cada operação.</p>
+                </div>
+                <div class="portfolio__filters reveal" id="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="software">Software</button>
+                    <button class="filter-btn" data-filter="dados">Dados &amp; BI</button>
+                    <button class="filter-btn" data-filter="automacao">Automação</button>
+                </div>
+                <div class="portfolio__grid" id="portfolio-grid"></div>
+            </div>
+        </section>
+
+        <!-- TRAJETÓRIA -->
+        <section id="experiencia" class="experiencia section-gray">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label reveal">Trajetória</span>
+                    <h2 class="section-title reveal">De infra à solução full-stack</h2>
+                    <p class="section-sub reveal">15+ anos evoluindo de técnico de TI a desenvolvedor sênior com foco em resultado de negócio.</p>
+                </div>
+                <div class="timeline" id="timeline"></div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="habilidades" class="habilidades section-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label reveal">Habilidades</span>
+                    <h2 class="section-title reveal">Stack técnico completo</h2>
+                </div>
+                <div class="habilidades__grid">
+                    <div class="habilidade-card reveal">
+                        <div class="habilidade-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/></svg>
+                        </div>
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Django</li>
+                            <li>Django REST Framework</li>
+                            <li>FastAPI</li>
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+                    <div class="habilidade-card reveal" style="--delay: 0.1s">
+                        <div class="habilidade-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5z"/></svg>
+                        </div>
+                        <h3>Dados &amp; Automação</h3>
+                        <ul>
+                            <li>Pandas</li>
+                            <li>Power BI</li>
+                            <li>Tableau</li>
+                            <li>Selenium / Playwright</li>
+                            <li>PyAutoGUI / PyWinAuto</li>
+                            <li>VBS / SAP</li>
+                        </ul>
+                    </div>
+                    <div class="habilidade-card reveal" style="--delay: 0.2s">
+                        <div class="habilidade-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+                        </div>
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>React / TypeScript</li>
+                            <li>JavaScript</li>
+                            <li>PyQt6</li>
+                            <li>TailwindCSS</li>
+                            <li>HTMX</li>
+                            <li>HTML / CSS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="contato section-dark">
+            <div class="container">
+                <div class="contato__inner">
+                    <span class="section-label section-label--light reveal">Contato</span>
+                    <h2 class="section-title section-title--light reveal">Vamos construir algo juntos</h2>
+                    <p class="contato__sub reveal">Faço uma reunião para criar uma proposta personalizada para a realidade de vocês. Sem compromisso, sem setup antecipado.</p>
+                    <div class="contato__actions reveal">
+                        <a href="mailto:pdcassiano@gmail.com" class="btn btn--primary">pdcassiano@gmail.com</a>
+                        <a href="https://wa.me/5582996207887?text=Ol%C3%A1%20Diego%2C%20vi%20seu%20portf%C3%B3lio%20e%20tenho%20interesse%20em%20conhecer%20melhor%20seus%20servi%C3%A7os.%20Podemos%20conversar%3F" target="_blank" class="btn btn--whatsapp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </a>
+                        <a href="https://www.linkedin.com/in/pdiegoneves" target="_blank" class="btn btn--outline-light">LinkedIn &rarr;</a>
+                    </div>
+                    <div class="contato__social reveal">
+                        <a href="https://www.linkedin.com/in/pdiegoneves" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://github.com/pdiegoneves" target="_blank" class="social-link" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@dundercore" target="_blank" class="social-link" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.407 0 6.43 0 12s.488 8.593 4.385 8.816c3.6.245 11.626.246 15.23 0C23.512 20.593 24 17.57 24 12s-.488-8.593-4.385-8.816zM9.545 15.568V8.432L15.818 12 9.545 15.568z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Diego Neves. Todos os direitos reservados.</p>
+            <p class="footer__sub">Maceió, AL &mdash; <a href="mailto:pdcassiano@gmail.com">pdcassiano@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
