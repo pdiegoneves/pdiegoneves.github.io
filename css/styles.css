@@ -1065,7 +1065,7 @@ svg { width: 24px; height: 24px; }
 /* =============================
    SCROLL REVEAL
 ============================= */
-.reveal {
+.js-ready .reveal {
     opacity: 0;
     transform: translateY(28px);
     transition:
@@ -1073,7 +1073,7 @@ svg { width: 24px; height: 24px; }
         transform 0.7s var(--ease-out-expo);
     transition-delay: var(--delay, 0s);
 }
-.reveal.visible {
+.js-ready .reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -1133,7 +1133,7 @@ svg { width: 24px; height: 24px; }
 
     .hero__container { gap: 32px; padding-top: 32px; padding-bottom: 64px; }
     .hero__photo { width: 180px; height: 180px; }
-    .hero__image-glow { width: 220px; height: 220px; }
+    .hero__image-glow { width: 220px; height: 220px; filter: blur(16px); }
     .hero__text { align-items: center; text-align: center; }
     .hero__actions { justify-content: center; }
     .hero__title br { display: none; }
@@ -1149,6 +1149,14 @@ svg { width: 24px; height: 24px; }
 
     .contato__actions { flex-direction: column; align-items: stretch; }
     .contato__actions .btn { justify-content: center; }
+
+    .header {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .hero__image-glow { animation: none; }
+    .hero__scroll-dot { animation: none; }
 }
 
 @media (max-height: 600px) {

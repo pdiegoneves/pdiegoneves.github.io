@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mark in-viewport reveals as visible before enabling animation system
+    document.querySelectorAll('.reveal').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight) el.classList.add('visible');
+    });
+    document.documentElement.classList.add('js-ready');
 
     // =====================
     // MOBILE MENU
