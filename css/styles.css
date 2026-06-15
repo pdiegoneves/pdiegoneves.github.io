@@ -1002,7 +1002,7 @@ svg { width: 24px; height: 24px; }
     flex-shrink: 0;
 }
 
-@media (min-width: 640px) { .habilidades__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .habilidades__grid { grid-template-columns: repeat(3, 1fr); } }
 
 /* =============================
    CONTATO
@@ -1123,4 +1123,47 @@ svg { width: 24px; height: 24px; }
 @media (min-width: 1024px) {
     .hero__photo { width: 400px; height: 400px; }
     .hero__image-glow { width: 440px; height: 440px; }
+}
+
+/* =============================
+   MOBILE
+============================= */
+@media (max-width: 767px) {
+    .container { padding: 0 16px; }
+
+    .hero__container { gap: 32px; padding-top: 32px; padding-bottom: 64px; }
+    .hero__photo { width: 180px; height: 180px; }
+    .hero__image-glow { width: 220px; height: 220px; }
+    .hero__text { align-items: center; text-align: center; }
+    .hero__actions { justify-content: center; }
+    .hero__title br { display: none; }
+
+    .sobre, .servicos, .modelo,
+    .portfolio, .experiencia,
+    .habilidades, .contato { padding: 64px 0; }
+    .section-header { margin-bottom: 36px; }
+
+    .servico-card { padding: 24px; }
+    .modelo-step  { padding: 24px; }
+    .modelo__quote { padding: 24px 20px; }
+
+    .contato__actions { flex-direction: column; align-items: stretch; }
+    .contato__actions .btn { justify-content: center; }
+}
+
+@media (max-height: 600px) {
+    .hero__scroll { display: none; }
+}
+
+/* =============================
+   REDUCED MOTION
+============================= */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .skill-bar__fill { transition: none; }
 }
