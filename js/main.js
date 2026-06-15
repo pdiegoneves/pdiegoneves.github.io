@@ -305,6 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const timeline = document.getElementById('timeline');
     if (timeline) {
+        timeline.innerHTML = '';
         experienceData.forEach((job, i) => {
             const el = document.createElement('div');
             el.className = 'timeline-item reveal';

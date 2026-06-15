@@ -1175,3 +1175,69 @@ svg { width: 24px; height: 24px; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .skill-bar__fill { transition: none; }
 }
+
+/* =============================
+   SKELETON
+============================= */
+@keyframes shimmer {
+    0%   { background-position: -600px 0; }
+    100% { background-position:  600px 0; }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+    background-size: 600px 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+    border-radius: var(--radius-sm);
+}
+
+/* Portfolio skeleton */
+.skeleton-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    padding: 28px;
+}
+.skeleton-card__title   { height: 18px; width: 55%; margin-bottom: 10px; }
+.skeleton-card__badge   { height: 22px; width: 28%; border-radius: var(--radius-full); margin-bottom: 16px; }
+.skeleton-card__line    { height: 13px; width: 100%; margin-bottom: 8px; }
+.skeleton-card__line:last-of-type { width: 70%; margin-bottom: 20px; }
+.skeleton-card__tags    { display: flex; gap: 6px; }
+.skeleton-card__tag     { height: 22px; width: 56px; border-radius: var(--radius-full); }
+
+/* Timeline skeleton */
+.skeleton-timeline {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 28px;
+    position: relative;
+}
+.skeleton-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 6px; bottom: 6px;
+    width: 2px;
+    background: linear-gradient(to bottom, #e2e8f0, transparent);
+    border-radius: 2px;
+}
+.skeleton-timeline-item {
+    position: relative;
+    padding-bottom: 36px;
+}
+.skeleton-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -25px; top: 6px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #e2e8f0;
+}
+.skeleton-tl__role   { height: 16px; width: 60%; margin-bottom: 8px; }
+.skeleton-tl__co     { height: 14px; width: 40%; margin-bottom: 6px; }
+.skeleton-tl__period { height: 12px; width: 30%; margin-bottom: 12px; }
+.skeleton-tl__desc   { height: 13px; width: 100%; margin-bottom: 6px; }
+.skeleton-tl__desc2  { height: 13px; width: 80%; }
+
+@media (prefers-reduced-motion: reduce) {
+    .skeleton { animation: none; background: #e2e8f0; }
+}
