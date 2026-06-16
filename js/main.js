@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'DockSafe',
             category: 'software',
             description: 'Sistema de dupla checagem do carregamento para eliminar erros na expedição de cargas.',
-            result: '50% ↓ erros',
+            result: 'R$ 16M economizados',
             tags: ['Python', 'Django', 'PyQt6', 'PostgreSQL', 'Streamlit'],
             link: 'projetos/DockSafe.html'
         },
