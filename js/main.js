@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mark in-viewport reveals as visible before enabling animation system
-    document.querySelectorAll('.reveal').forEach(el => {
-        const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight) el.classList.add('visible');
-    });
-    document.documentElement.classList.add('js-ready');
 
     // =====================
     // MOBILE MENU
@@ -51,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =====================
     const sections  = document.querySelectorAll('main section[id]');
     const navLinks  = document.querySelectorAll('.nav__link');
-    const navH      = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 68;
+    const navH      = 68; // matches --nav-h in CSS
 
     const sectionObserver = new IntersectionObserver(entries => {
         entries.forEach(e => {
@@ -78,6 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Double rAF: after first paint, initial IntersectionObserver callbacks
+    // have already fired for in-viewport elements — safe to enable animations
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+        document.documentElement.classList.add('js-ready');
+    }));
 
     // =====================
     // COUNTER ANIMATION
