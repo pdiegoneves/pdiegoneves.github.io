@@ -1,255 +1,477 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Paulo Neves | Desenvolvedor, Analista de Dados & Criador de
-            Conteúdo</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
-        <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
-        <!-- Application Structure Plan: A single-page application with a top navigation bar for smooth scrolling to thematic sections: Hero, Sobre, Portfólio, Habilidades, Experiência, and Contato. This structure was chosen to provide a clear narrative flow, starting with a strong summary (Hero), delving into personal history (Sobre), showcasing tangible work (Portfólio), quantifying skills (Habilidades/Experiência), and ending with a clear call to action (Contato). The key interaction is the filterable portfolio, allowing recruiters to easily view projects relevant to their needs (Software, Dados, Conteúdo), which is more efficient than a static list. -->
-        <!-- Visualization & Content Choices: 
-        - Report Info: Paulo's multi-faceted career (developer, data analyst, content creator). Goal: Allow users to explore projects by category. Viz/Presentation: Interactive card-based gallery with filter buttons. Interaction: Clicking filters ('Software', 'Dados', etc.) instantly updates the visible project cards. Justification: This provides immediate, relevant access to his work, catering to different visitor interests. Library/Method: Vanilla JS DOM manipulation.
-        - Report Info: Key technical competencies (Python, Django, PyQt, etc.). Goal: Visualize proficiency and core skills quickly. Viz/Presentation: Horizontal Bar Chart. Interaction: Tooltips on hover provide more info. Justification: A chart is more engaging and easier to parse at a glance than a simple text list, highlighting his strongest areas effectively. Library/Method: Chart.js with Canvas.
-        - Report Info: Chronological work history. Goal: Display career progression clearly. Viz/Presentation: Vertical timeline. Interaction: None, static visual element. Justification: A timeline is an intuitive and universally understood format for representing professional experience sequentially. Library/Method: HTML/CSS with Tailwind.
-        - Report Info: Summary and personal branding. Goal: Inform and create a personal connection. Viz/Presentation: Thematic text blocks (Hero, Sobre). Interaction: None. Justification: Well-crafted text is essential for telling his professional story and setting the tone. Library/Method: HTML/Tailwind.
-    -->
-        <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-        <link rel="stylesheet" href="../css/styles.css">
-    </head>
-    <body class="antialiased">
-        <header id="header"
-            class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-            <nav
-                class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="../index.html"
-                    class="text-2xl font-bold text-gray-800">Paulo
-                    Neves</a>
-                <div class="hidden md:flex space-x-6 items-center">
-                    <a href="../index.html#sobre"
-                        class="text-gray-600 hover:text-gray-900 transition">Sobre</a>
-                    <a href="../index.html#portfolio"
-                        class="text-gray-600 hover:text-gray-900 transition">Portfólio</a>
-                    <a href="../index.html#habilidades"
-                        class="text-gray-600 hover:text-gray-900 transition">Habilidades</a>
-                    <a href="../index.html#experiencia"
-                        class="text-gray-600 hover:text-gray-900 transition">Experiência</a>
-                    <a href="../index.html#contato"
-                        class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">Contato</a>
-                </div>
-                <button id="mobile-menu-button"
-                    class="md:hidden text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"><path
-                            stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </nav>
-            <div id="mobile-menu" class="hidden md:hidden">
-                <a href="../index.html#sobre"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Sobre</a>
-                <a href="../index.html#portfolio"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Portfólio</a>
-                <a href="../index.html#habilidades"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Habilidades</a>
-                <a href="../index.html#experiencia"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Experiência</a>
-                <a href="../index.html#contato"
-                    class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Contato</a>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Velocidade de Entrega — Automação RPA + BI para atingir a meta de entregas em D+2. 100% da extração de dados no SAP automatizada com Python e VBS.">
+    <title>Velocidade de Entrega | Diego Neves</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+/* =============================
+   PROJECT HERO
+============================= */
+.project-hero {
+    background-color: var(--dark);
+    padding: calc(var(--nav-h) + 72px) 0 72px;
+    position: relative;
+    overflow: hidden;
+}
+.project-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 20% 60%, rgba(16,185,129,.07) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.project-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted-light);
+    margin-bottom: 28px;
+    transition: color 150ms;
+}
+.project-breadcrumb:hover { color: var(--accent); }
+.project-breadcrumb svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.project-hero__label { margin-bottom: 16px; }
+
+.project-hero__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--text-light);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.project-hero__result {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: var(--accent-bg);
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(16,185,129,.25);
+    margin-bottom: 20px;
+}
+
+.project-hero__desc {
+    font-size: 1.0625rem;
+    color: var(--text-muted-light);
+    line-height: 1.75;
+    max-width: 620px;
+    margin-bottom: 28px;
+}
+
+.project-hero__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.project-hero__tags span {
+    padding: 5px 12px;
+    background-color: rgba(255,255,255,.06);
+    color: var(--text-muted-light);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-dark);
+}
+
+/* =============================
+   GALLERY
+============================= */
+.gallery { padding: 72px 0; }
+
+.gallery__carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background-color: var(--dark-2);
+    box-shadow: var(--shadow-xl);
+}
+
+.gallery__track {
+    display: flex;
+    transition: transform 500ms var(--ease-out-expo);
+}
+
+.gallery__slide { min-width: 100%; }
+.gallery__slide img { width: 100%; display: block; }
+
+.gallery__caption {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.gallery__nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(15,23,42,.6);
+    border: 1px solid rgba(255,255,255,.15);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 150ms, transform 200ms var(--ease-out-expo);
+    z-index: 2;
+}
+.gallery__nav-btn:hover {
+    background-color: rgba(16,185,129,.3);
+    border-color: rgba(16,185,129,.5);
+    transform: translateY(-50%) scale(1.08);
+}
+.gallery__nav-btn svg { width: 20px; height: 20px; }
+.gallery__nav-btn--prev { left: 16px; }
+.gallery__nav-btn--next { right: 16px; }
+
+.gallery__dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.gallery__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.35);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: background-color 200ms, transform 200ms;
+}
+.gallery__dot.active {
+    background-color: var(--accent);
+    transform: scale(1.3);
+}
+
+/* =============================
+   PROJECT CONTENT
+============================= */
+.project-content { padding: 80px 0; }
+
+.project-content__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.project-block__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.project-block__title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+.project-block__text {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+.project-block__text + .project-block__text { margin-top: 14px; }
+
+.project-block__list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+}
+.project-block__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+.project-block__list li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 8px;
+}
+
+/* =============================
+   PROJECT CTA
+============================= */
+.project-cta { padding: 80px 0; }
+.project-cta__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.project-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+@media (max-width: 767px) {
+    .project-hero { padding: calc(var(--nav-h) + 40px) 0 48px; }
+    .project-cta__actions { flex-direction: column; align-items: stretch; }
+    .project-cta__actions .btn { justify-content: center; }
+}
+    </style>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"></noscript>
+</head>
+<body>
+
+    <!-- NAV -->
+    <header id="header" class="header">
+        <nav class="nav">
+            <a href="../index.html" class="nav__logo"><span class="accent">D</span>iego <span class="accent">N</span>eves</a>
+            <div class="nav__links" id="nav-links">
+                <a href="../index.html#sobre" class="nav__link">Sobre</a>
+                <a href="../index.html#servicos" class="nav__link">Serviços</a>
+                <a href="../index.html#portfolio" class="nav__link">Portfólio</a>
+                <a href="../index.html#experiencia" class="nav__link">Trajetória</a>
+                <a href="../index.html#contato" class="nav__cta">Agendar Reunião</a>
             </div>
-        </header>
+            <button class="nav__mobile-btn" id="mobile-menu-button" aria-label="Menu">
+                <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </nav>
+        <div class="nav__mobile hidden" id="mobile-menu">
+            <a href="../index.html#sobre" class="nav__mobile-link">Sobre</a>
+            <a href="../index.html#servicos" class="nav__mobile-link">Serviços</a>
+            <a href="../index.html#portfolio" class="nav__mobile-link">Portfólio</a>
+            <a href="../index.html#experiencia" class="nav__mobile-link">Trajetória</a>
+            <a href="../index.html#contato" class="nav__mobile-link nav__mobile-cta">Agendar Reunião</a>
+        </div>
+    </header>
 
-        <main>
-            <section id="hero-velocidade-de-entrega"
-                class="w-full max-w-4xl mx-auto my-12 px-4 md:px-0">
-                <div
-                    class="relative overflow-hidden shadow-2xl rounded-lg bg-gray-100">
+    <main>
 
-                    <div id="slider"
-                        class="flex transition-transform duration-500 ease-in-out">
-                        <div class="min-w-full">
-                            <img src="../assets/img/velocidade-de-entrega.jpg"
-                                alt="Inteface de verificação das caixas em PyQt6"
-                                class="w-full object-cover">
-                            <h2
-                                class="relative text-center pb-8 text-sm text-gray-700">Dashboard desenvolvido no Tableau</h2>
+        <!-- PROJECT HERO -->
+        <section class="project-hero">
+            <div class="container">
+                <a href="../index.html#portfolio" class="project-breadcrumb">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+                    Portfólio
+                </a>
+                <div>
+                    <span class="section-label project-hero__label">Dados &amp; BI</span>
+                </div>
+                <h1 class="project-hero__title">Velocidade de Entrega</h1>
+                <div>
+                    <span class="project-hero__result">100% automação da extração</span>
+                </div>
+                <p class="project-hero__desc">
+                    Solução híbrida de RPA e Business Intelligence para atingir a meta de entregas em até dois dias (D+2) — eliminando relatórios manuais no SAP e entregando visibilidade instantânea de KPIs no Tableau.
+                </p>
+                <div class="project-hero__tags">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>SAP</span>
+                    <span>Tableau</span>
+                    <span>VBS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="gallery section-light">
+            <div class="container">
+                <div class="gallery__carousel">
+                    <div class="gallery__track" id="slider">
+                        <div class="gallery__slide">
+                            <img src="../assets/img/velocidade-de-entrega.jpg" alt="Dashboard de Velocidade de Entrega desenvolvido no Tableau — visão de KPIs de faturamento e logística">
                         </div>
+                    </div>
+                    <button class="gallery__nav-btn gallery__nav-btn--prev" id="prev-slide" aria-label="Slide anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="gallery__nav-btn gallery__nav-btn--next" id="next-slide" aria-label="Próximo slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="gallery__dots" id="slider-dots"></div>
+                </div>
+                <p class="gallery__caption" id="gallery-caption">Dashboard desenvolvido no Tableau</p>
+            </div>
+        </section>
 
-                        <!-- <div class="min-w-full">
-                            <img src="../assets/img/docksafe-webjpg.jpg"
-                                alt="Interface em HTML/CSS(Tailwind)/Js"
-                                class="w-full object-cover">
-                            <h2
-                                class="relative text-center pb-8 text-sm text-gray-700">Interface
-                                de Gestão Web</h2>
-                        </div> -->
+        <!-- PROJECT CONTENT -->
+        <section class="project-content section-gray">
+            <div class="container">
+                <div class="project-content__inner">
 
+                    <div class="project-block">
+                        <p class="project-block__eyebrow">O Desafio</p>
+                        <h2 class="project-block__title">Meta de D+2 travada por relatórios manuais no SAP</h2>
+                        <p class="project-block__text">
+                            Atingir a meta de entregas em até dois dias exigia uma otimização drástica no setor de faturamento — o maior gargalo do processo. A equipe dependia da extração manual de relatórios no SAP, um ciclo lento e repetitivo que consumia horas de trabalho por dia.
+                        </p>
+                        <p class="project-block__text">
+                            Sem visibilidade em tempo real dos indicadores de entrega, a gestão agia sempre de forma reativa: o problema já tinha acontecido quando chegava ao conhecimento de quem podia resolver.
+                        </p>
                     </div>
 
-                    <button id="prev-slide"
-                        class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md hover:bg-white focus:outline-none transition">
-                        <svg class="w-6 h-6 text-gray-800" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                        </svg>
-                    </button>
-                    <button id="next-slide"
-                        class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md hover:bg-white focus:outline-none transition">
-                        <svg class="w-6 h-6 text-gray-800" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
+                    <div class="project-block">
+                        <p class="project-block__eyebrow">A Solução</p>
+                        <h2 class="project-block__title">RPA + BI: extração automática e dashboard em tempo real</h2>
+                        <p class="project-block__text">
+                            Arquitetei uma solução híbrida que atacou o problema em duas frentes simultâneas:
+                        </p>
+                        <ul class="project-block__list">
+                            <li><strong>Automação RPA (VBS + Python)</strong> — scripts VBScript que se comunicam diretamente com a interface do SAP, automatizando 100% da extração de dados de faturamento e logística. O Python orquestra a execução, agendamento e tratamento de erros.</li>
+                            <li><strong>Processamento com Pandas</strong> — os dados brutos extraídos são limpos, validados e enriquecidos automaticamente, eliminando a etapa manual de "ajuste de planilha" que a equipe fazia todo dia.</li>
+                            <li><strong>Dashboard Tableau</strong> — os dados tratados alimentam painéis interativos com KPIs de entrega por rota, transportadora e período, com atualização automática em cada ciclo de extração.</li>
+                        </ul>
+                    </div>
 
-                    <div id="slider-dots"
-                        class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    <div class="project-block">
+                        <p class="project-block__eyebrow">Resultados</p>
+                        <h2 class="project-block__title">Zero relatório manual. Visibilidade imediata.</h2>
+                        <p class="project-block__text">
+                            A automação eliminou completamente a necessidade de extração manual de dados, liberando a equipe de faturamento para análise e tomada de decisão — as tarefas que realmente movem o indicador.
+                        </p>
+                        <p class="project-block__text">
+                            A gestão passou a ter visibilidade instantânea dos KPIs de entrega, permitindo intervenção proativa antes que um pedido perdesse o prazo. O projeto foi um pilar direto na conquista da meta de D+2 que a operação perseguia.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="project-cta section-dark">
+            <div class="container">
+                <div class="project-cta__inner">
+                    <span class="section-label section-label--light">Próximo passo</span>
+                    <h2 class="section-title section-title--light">Posso construir isso para a sua operação</h2>
+                    <p class="section-sub section-sub--light">Uma conversa para entender seu processo já é suficiente para identificar onde está o custo invisível.</p>
+                    <div class="project-cta__actions">
+                        <a href="../index.html#contato" class="btn btn--primary">Agendar Reunião</a>
+                        <a href="../index.html#portfolio" class="btn btn--outline-light">← Ver outros projetos</a>
                     </div>
                 </div>
-            </section>
-            <section
-                class="relative flex-col justify-center items-center mx-24 text-2xl">
-                <h1 class="text-4xl text-center text-gray-700 my-12">
-                    Velocidade de Entrega - Sistema de Análise e Automação para
-                    Entregas (D+2)
-                </h1>
-                <p class="mb-6">
-                    O Desafio Atingir a meta de entregas em até dois dias (D+2)
-                    exigia uma otimização drástica no setor de faturamento, que
-                    era um gargalo no processo. A equipe dependia da geração
-                    manual de relatórios no sistema SAP, um processo lento,
-                    repetitivo e que consumia horas de trabalho que poderiam ser
-                    usadas para análises estratégicas.
-                </p>
-                <p class="mb-6">
-                    A Solução Arquitetei uma solução híbrida de Robotic Process
-                    Automation (RPA) e Business Intelligence (BI) para resolver
-                    esse gargalo de ponta-a-ponta.
-                </p>
-                <p class="mb-6">
-                    Automação (RPA): Utilizando Python como orquestrador, criei
-                    scripts em VBScript (VBS) que se comunicam diretamente com a
-                    interface do SAP. Esses scripts automatizam 100% da extração
-                    de dados de faturamento e logística, executando tarefas que
-                    antes eram manuais.
-                </p>
-                <p class="mb-6">
-                    Análise e BI: Os dados brutos extraídos são processados,
-                    limpos e enriquecidos em tempo real utilizando Pandas. Em
-                    seguida, as informações tratadas são carregadas em
-                    dashboards interativos no Tableau, fornecendo uma visão
-                    clara dos KPIs de entrega.
-                </p>
-                <p class="mb-6">
-                    Resultados e Impacto A automação eliminou completamente a
-                    necessidade de geração manual de relatórios, liberando a
-                    equipe de faturamento para tarefas de maior valor. Isso
-                    gerou um aumento direto na produtividade do setor e forneceu
-                    à gestão visibilidade imediata dos indicadores de entrega,
-                    sendo um pilar fundamental para monitorar e alcançar a meta
-                    de D+2.
-                </p>
-
-            </section>
-        </main>
-
-        <footer class="bg-gray-800 text-white">
-            <div class="container mx-auto px-6 py-8 text-center">
-                <p>&copy; 2025 Paulo Neves. Todos os direitos reservados.</p>
             </div>
-        </footer>
-        <script>
-        // --- LÓGICA DO MENU MOBILE (Seu código original) ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Diego Neves. Todos os direitos reservados.</p>
+            <p class="footer__sub">Maceió, AL &mdash; <a href="mailto:pdcassiano@gmail.com">pdcassiano@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // MOBILE MENU
+        const mobileBtn  = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu   = document.getElementById('icon-menu');
+        const iconClose  = document.getElementById('icon-close');
+
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                const open = !mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden', open);
+                iconMenu.classList.toggle('hidden', !open);
+                iconClose.classList.toggle('hidden', open);
+            });
+        }
+        document.querySelectorAll('.nav__mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            });
+        });
+
+        // CAROUSEL
+        const track     = document.getElementById('slider');
+        const prevBtn   = document.getElementById('prev-slide');
+        const nextBtn   = document.getElementById('next-slide');
+        const dotsEl    = document.getElementById('slider-dots');
+        const captionEl = document.getElementById('gallery-caption');
+
+        if (!track) return;
+
+        const captions = [
+            'Dashboard desenvolvido no Tableau'
+        ];
+
+        const total = track.children.length;
+        let current = 0;
+        const dots = [];
+
+        if (total <= 1) {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (dotsEl)  dotsEl.style.display  = 'none';
         }
 
-        // --- LÓGICA DO CARROSSEL ---
-        const slider = document.getElementById('slider');
-        const prevButton = document.getElementById('prev-slide');
-        const nextButton = document.getElementById('next-slide');
-        const dotsContainer = document.getElementById('slider-dots');
-
-        // Verifica se os elementos do carrossel existem na página
-        if (slider && prevButton && nextButton && dotsContainer) {
-            const slides = slider.children;
-            const totalSlides = slides.length;
-            let currentSlide = 0;
-            let dots = []; // Array para armazenar os botões "dot"
-
-            // 1. Criar os "pontos" (dots) de navegação
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/50', 'hover:bg-white', 'transition');
-                dot.dataset.slide = i; // Armazena o índice do slide no dot
-                dot.addEventListener('click', () => {
-                    goToSlide(i);
-                });
-                dotsContainer.appendChild(dot);
-                dots.push(dot);
-            }
-
-            // 2. Função principal para mover o slider
-            function goToSlide(slideIndex) {
-                // Loop: se passar do último, volta ao primeiro
-                if (slideIndex < 0) {
-                    currentSlide = totalSlides - 1;
-                } 
-                // Loop: se voltar do primeiro, vai para o último
-                else if (slideIndex >= totalSlides) {
-                    currentSlide = 0;
-                } else {
-                    currentSlide = slideIndex;
-                }
-                
-                // Move o "trilho" dos slides
-                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-                // Atualiza o dot ativo
-                updateDots();
-            }
-
-            // 3. Função para atualizar qual "dot" está ativo
-            function updateDots() {
-                for (let i = 0; i < dots.length; i++) {
-                    if (i === currentSlide) {
-                        dots[i].classList.add('bg-white');
-                        dots[i].classList.remove('bg-white/50');
-                    } else {
-                        dots[i].classList.remove('bg-white');
-                        dots[i].classList.add('bg-white/50');
-                    }
-                }
-            }
-
-            // 4. Event Listeners para os botões
-            nextButton.addEventListener('click', () => {
-                goToSlide(currentSlide + 1);
-            });
-
-            prevButton.addEventListener('click', () => {
-                goToSlide(currentSlide - 1);
-            });
-
-            // 5. Iniciar o carrossel no primeiro slide
-            goToSlide(0);
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'gallery__dot';
+            dot.setAttribute('aria-label', `Slide ${i + 1}`);
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsEl.appendChild(dot);
+            dots.push(dot);
         }
-    </script>
-    </body>
+
+        function goToSlide(index) {
+            if (index < 0) current = total - 1;
+            else if (index >= total) current = 0;
+            else current = index;
+
+            track.style.transform = `translateX(-${current * 100}%)`;
+            if (captionEl) captionEl.textContent = captions[current] || '';
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(current - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(current + 1));
+
+        goToSlide(0);
+    });
+    </script>
+</body>
 </html>
